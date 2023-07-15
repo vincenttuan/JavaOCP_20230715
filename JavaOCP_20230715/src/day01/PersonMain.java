@@ -15,6 +15,18 @@ public class PersonMain {
 		p2.height = 165.0;
 		p2.weight = 45.0;
 		
+		//System.out.println(p1.getBmi());
+		//System.out.println(p2.getBmi());
+		
+		p1.printResult();
+		p2.printResult();
+		
+		/*
+		 * 期望能加上診斷結果(過輕, 正常或過重), 如下:
+		 * M Jack bmi值=20.76 正常
+		 * F Rose bmi值=16.53 過輕
+		 * 請撰寫 ...
+		 * */
 	}
 
 }
