@@ -12,6 +12,8 @@ public class DrinkMain {
 		Drink d2 = new Drink("tea", "綠茶", 12);
 		d2.print();
 		
+		Drink d3 = new Drink("tea", "青茶", 15);
+		System.out.println(d3);
 
 	}
 
