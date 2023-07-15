@@ -29,6 +29,12 @@ public class DrinkMain2 {
 		System.out.printf("總和=%d\n", sum);
 		System.out.println("-------------------------------------");
 		
+		int sum2 = 0;
+		for(Drink drink : drinks) {
+			sum2 += drink.price;
+		}
+		System.out.printf("總和=%d\n", sum2);
+		
 		
 	}
 
