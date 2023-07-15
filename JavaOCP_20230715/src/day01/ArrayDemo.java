@@ -18,10 +18,12 @@ public class ArrayDemo {
 		
 		System.out.println("--------");
 		// 使用 for-loop
+		int sum = 0; // 總和
 		for(int i=0;i<array.length;i++) {
 			System.out.println(array[i]);
+			sum += array[i]; // 總和累計 
 		}
-		
+		System.out.println(sum);
 	}
 
 }
