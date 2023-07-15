@@ -1,7 +1,5 @@
 package day01;
 
-import java.util.Arrays;
-
 public class DrinkMain3 {
 
 	public static void main(String[] args) {
@@ -24,6 +22,9 @@ public class DrinkMain3 {
 		// 列印總金額
 		System.out.printf("總金額: $%d\n", sum);
 		
+		// 請問平均一杯飲料多少錢 ?
+		int avg = sum / drinks.length;
+		System.out.printf("平均每杯: $%d\n", avg);
 	}
 
 }
