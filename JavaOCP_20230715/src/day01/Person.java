@@ -17,8 +17,24 @@ public class Person {
 		return bmi;
 	}
 	
+	String getBmiResult() { // 得到 bmi 診斷結果
+		String result = "正常";
+		double bmi = getBmi(); // 取得 bmi 值
+		switch (sex) { // 根據性別來判斷
+			case 'M':
+				if(bmi <= 18) result = "過輕";
+				else if(bmi > 23) result = "過重";
+				break;
+			case 'F':
+				if(bmi <= 17) result = "過輕";
+				else if(bmi > 22) result = "過重";
+				break;	
+		}
+		return result;
+	}
+	
 	void printResult() { // 印出結果
-		System.out.printf("%c %s bmi值=%.2f\n", sex, name, getBmi());
+		System.out.printf("%c %s bmi值=%.2f %s\n", sex, name, getBmi(), getBmiResult());
 	}
 	
 }
