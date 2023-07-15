@@ -30,7 +30,9 @@ public class DrinkMain5 {
 				amount++;
 			}
 		}
-		System.out.printf("%s %d 元 %d 杯 小計 %d 元\n", drinkName, sum/amount, amount, sum);
+		if(amount != 0) { 
+			System.out.printf("%s %d 元 %d 杯 小計 %d 元\n", drinkName, sum/amount, amount, sum);
+		}
 		return sum;
 	}
 
