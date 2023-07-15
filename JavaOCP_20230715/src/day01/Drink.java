@@ -20,4 +20,11 @@ public class Drink {
 	void print() {
 		System.out.printf("type=%s name=%s price=%d\n", type, name, price);
 	}
+
+	@Override
+	public String toString() {
+		return "Drink [type=" + type + ", name=" + name + ", price=" + price + "]";
+	}
+
+	
 }
