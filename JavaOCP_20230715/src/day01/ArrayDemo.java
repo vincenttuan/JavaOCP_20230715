@@ -25,6 +25,17 @@ public class ArrayDemo {
 			sum += array[i]; // 總和累計 
 		}
 		System.out.println(sum);
+		System.out.println("--------");
+		
+		// 使用 for-each(for-in)
+		int sum2 = 0;
+		for(int item : array) {
+			System.out.println(item);
+			sum2 += item;
+		}
+		System.out.println(sum2);
+		
+		
 	}
 
 }
