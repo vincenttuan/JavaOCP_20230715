@@ -42,7 +42,11 @@ public class DrinkMain4 {
 			}
 		}
 		System.out.printf("青茶 %d 元 %d 杯 小計 %d 元\n", sum3/amount3, amount3, sum3);
-
+		
+		System.out.println("--------------------------------------");
+		// 總金額
+		int total = sum1 + sum2 + sum3;
+		System.out.printf("總金額 %d 元\n", total);
 	}
 
 }
