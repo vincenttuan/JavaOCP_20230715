@@ -21,7 +21,7 @@ public class DrinkMain5 {
 	}
 	
 	// 計算小計與印出資料並回傳小計的方法
-	private static int calcDrinkSumAndPrint(String drinkName, Drink[] drinks) {
+	public static int calcDrinkSumAndPrint(String drinkName, Drink[] drinks) {
 		int sum = 0;    // 小計
 		int amount = 0; // 杯數
 		for(Drink drink : drinks) {
