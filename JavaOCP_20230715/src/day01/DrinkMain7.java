@@ -25,7 +25,7 @@ public class DrinkMain7 {
 				d1, d2, d3, d4, d5, d6, d7, d8,
 				d1, d1, d1, d2, d2, d3, d3, d4,
 				d4, d5, d6, d7, d8, d8, d1, d2,
-				d1, d2, d3, d4, d5, d6, d7, d8,
+				d1, d2, d3, d4, d5, d6, d7, d8
 		};
 		
 		
