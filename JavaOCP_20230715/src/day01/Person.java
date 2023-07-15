@@ -17,8 +17,7 @@ public class Person {
 		return bmi;
 	}
 	
-	
-	void printResult() {
+	void printResult() { // 印出結果
 		System.out.printf("%c %s bmi值=%.2f\n", sex, name, getBmi());
 	}
 	
