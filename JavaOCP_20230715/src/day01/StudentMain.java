@@ -13,6 +13,12 @@ public class StudentMain {
 		
 		System.out.println(s1.isPass());
 		System.out.println(s2.isPass());
+		
+		System.out.printf("姓名:%s 分數:%d 及格:%b\n", s1.name, s1.score, s1.isPass());
+		System.out.printf("姓名:%s 分數:%d 及格:%b\n", s2.name, s2.score, s2.isPass());
+		
+		System.out.printf("姓名:%s 分數:%d 及格:%s\n", s1.name, s1.score, s1.isPass()?"及格":"不及格");
+		System.out.printf("姓名:%s 分數:%d 及格:%s\n", s2.name, s2.score, s2.isPass()?"及格":"不及格");
 	}
 
 }
