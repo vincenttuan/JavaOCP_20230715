@@ -18,7 +18,7 @@ public class ArrayDemo2 {
 		System.out.println("-------");
 		// 印出所有成績 Arrays.toString()
 		System.out.println(Arrays.toString(scores));
-
+		
 	}
 
 }
