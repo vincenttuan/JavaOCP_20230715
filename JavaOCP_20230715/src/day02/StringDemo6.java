@@ -27,6 +27,11 @@ public class StringDemo6 {
 			summary += Integer.parseInt(student.SCORE3);
 		}
 		System.out.printf("成績總和: %,d\n", summary);
+		
+		// 假設 SCORE1, SCORE2, SCORE3 是該名學生的三次考試成績
+		// 請印出成績是逐漸進步的學生名字
+		
+		
 	}
 
 }
