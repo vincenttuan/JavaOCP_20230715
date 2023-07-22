@@ -35,6 +35,14 @@ public class StringDemo3 {
 			cbStocks[i] = cbStock;
 		}
 		System.out.println("cbStocks 筆數(格式化後):" + cbStocks.length);
+		// 5.透過 cbStocks 陣列計算出所有庫存總和 
+		int summary = 0;
+		for(CBStock cbStock : cbStocks) {
+			// 因為 cbStock.TOTAL_STOCK_NOS 是字串所以要用 Integer.parseInt() 轉型
+			summary += Integer.parseInt(cbStock.TOTAL_STOCK_NOS);
+		}
+		System.out.printf("所有庫存總和: %,d 股\n", summary);
+		System.out.printf("所有庫存總和: %,d 張\n", summary/1000);
 	}
 
 }
