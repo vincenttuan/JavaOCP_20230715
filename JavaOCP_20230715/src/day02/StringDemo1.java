@@ -23,7 +23,7 @@ public class StringDemo1 {
 		System.out.println(CB_UNSOLD_COST);
 		System.out.println(CB_NOCOST_STOCK_NOS);
 		
-		final String TOTAL_STOCK_NOS = CB_UNSOLD_STOCK_NOS + CB_NOCOST_STOCK_NOS;
+		final String TOTAL_STOCK_NOS = String.valueOf(Integer.parseInt(CB_UNSOLD_STOCK_NOS) + Integer.parseInt(CB_NOCOST_STOCK_NOS));
 		
 		System.out.println(TOTAL_STOCK_NOS); // 如何等於 2050000
 	}
