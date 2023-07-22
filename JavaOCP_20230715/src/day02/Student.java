@@ -19,6 +19,4 @@ public class Student {
 		return "Student [NAME=" + NAME + ", SCORE1=" + SCORE1 + ", SCORE2=" + SCORE2 + ", SCORE3=" + SCORE3 + "]";
 	}
 	
-	
-	
 }
