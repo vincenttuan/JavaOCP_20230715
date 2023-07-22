@@ -11,11 +11,11 @@ public class StringDemo4 {
 	public static void main(String[] args) throws IOException {
 		// 請計算出 "學生成績檔B.txt" 所有分數的總和
 		//--地端抓取-----------------------------------------------------------------------
-		//File file = new File("src/day02/學生成績檔B.txt");
-		//String allData = new Scanner(file).useDelimiter("\\A").next();
+		File file = new File("src/day02/學生成績檔B.txt");
+		String allData = new Scanner(file).useDelimiter("\\A").next();
 		//--雲端抓取-----------------------------------------------------------------------
-		URL url = new URL("http://192.168.1.157:9090/java/%E5%AD%B8%E7%94%9F%E6%88%90%E7%B8%BE%E6%AA%94B.txt");
-		String allData = new Scanner(url.openStream()).useDelimiter("\\A").next();
+		//URL url = new URL("http://192.168.1.157:9090/java/%E5%AD%B8%E7%94%9F%E6%88%90%E7%B8%BE%E6%AA%94B.txt");
+		//String allData = new Scanner(url.openStream()).useDelimiter("\\A").next();
 		//-------------------------------------------------------------------------
 		System.out.printf("字數: %d\n", allData.length());
 		String[] rows = allData.split(System.lineSeparator());
