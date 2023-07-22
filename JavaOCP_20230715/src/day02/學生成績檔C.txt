@@ -1,0 +1,62 @@
+[
+    {
+        "NAME": "John",
+        "SCORE1": "78",
+        "SCORE2": "85",
+        "SCORE3": "90"
+    },
+    {
+        "NAME": "Lisa",
+        "SCORE1": "80",
+        "SCORE2": "88",
+        "SCORE3": "92"
+    },
+    {
+        "NAME": "Mark",
+        "SCORE1": "90",
+        "SCORE2": "86",
+        "SCORE3": "94"
+    },
+    {
+        "NAME": "Anna",
+        "SCORE1": "85",
+        "SCORE2": "91",
+        "SCORE3": "89"
+    },
+    {
+        "NAME": "Tom",
+        "SCORE1": "88",
+        "SCORE2": "76",
+        "SCORE3": "80"
+    },
+    {
+        "NAME": "Linda",
+        "SCORE1": "95",
+        "SCORE2": "85",
+        "SCORE3": "87"
+    },
+    {
+        "NAME": "Paul",
+        "SCORE1": "78",
+        "SCORE2": "88",
+        "SCORE3": "83"
+    },
+    {
+        "NAME": "Emma",
+        "SCORE1": "82",
+        "SCORE2": "91",
+        "SCORE3": "88"
+    },
+    {
+        "NAME": "Jason",
+        "SCORE1": "76",
+        "SCORE2": "82",
+        "SCORE3": "86"
+    },
+    {
+        "NAME": "Mia",
+        "SCORE1": "88",
+        "SCORE2": "92",
+        "SCORE3": "85"
+    }
+]
