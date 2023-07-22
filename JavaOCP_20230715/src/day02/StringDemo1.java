@@ -26,6 +26,16 @@ public class StringDemo1 {
 		final String TOTAL_STOCK_NOS = String.valueOf(Integer.parseInt(CB_UNSOLD_STOCK_NOS) + Integer.parseInt(CB_NOCOST_STOCK_NOS));
 		
 		System.out.println(TOTAL_STOCK_NOS); // 如何等於 2050000
+		
+		// 將資料配置到 CBStock 物件中
+		CBStock cbStock = new CBStock(CB_TRAN_DATE, CB_BROKER_ID, CB_ACNO, CB_COMPANY_NO, CB_DEPT, CB_UNSOLD_STOCK_NOS, CB_UNSOLD_COST, CB_NOCOST_STOCK_NOS);
+		System.out.print("投資人帳號:");
+		System.out.println(cbStock.CB_BROKER_ID + "-" + cbStock.CB_ACNO);
+		System.out.print("投資人庫存:");
+		System.out.println(cbStock.TOTAL_STOCK_NOS);
+		System.out.println(cbStock);
+		
+		
 	}
 
 }
