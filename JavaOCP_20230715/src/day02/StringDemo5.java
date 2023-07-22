@@ -39,6 +39,7 @@ public class StringDemo5 {
 			summary += Integer.parseInt(student.SCORE3);
 		}
 		System.out.printf("成績總和: %,d\n", summary);
+		
 	}
 
 }
