@@ -13,5 +13,12 @@ public class Student {
 		SCORE2 = sCORE2;
 		SCORE3 = sCORE3;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [NAME=" + NAME + ", SCORE1=" + SCORE1 + ", SCORE2=" + SCORE2 + ", SCORE3=" + SCORE3 + "]";
+	}
+	
+	
 	
 }
