@@ -39,7 +39,7 @@ public class StringDemo6 {
 		
 		System.out.println("成績是逐漸退步的學生名字:");
 		for(Student student : students) {
-			if(!student.isImproving()) {
+			if(student.isDeclining()) {
 				System.out.printf("%s 成績:%s %s %s\n", student.NAME, student.SCORE1, student.SCORE2, student.SCORE3);
 			}
 		}

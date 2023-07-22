@@ -26,8 +26,8 @@
     {
         "NAME": "Tom",
         "SCORE1": "88",
-        "SCORE2": "76",
-        "SCORE3": "80"
+        "SCORE2": "80",
+        "SCORE3": "76"
     },
     {
         "NAME": "Linda",
