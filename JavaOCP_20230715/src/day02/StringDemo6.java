@@ -66,6 +66,8 @@ public class StringDemo6 {
         PearsonsCorrelation pc = new PearsonsCorrelation();
         // correlation 相關係數
         // 0.3: 弱相關, 0.45: 中度相關, 0.7: 高度相關
+        System.out.println("相關係數:");
+        System.out.println("0.3: 弱相關, 0.45: 中度相關, 0.7: 高度相關");
         System.out.println("SCORE1 與 SCORE2 的相關性: " + pc.correlation(score1Array, score2Array));
         System.out.println("SCORE1 與 SCORE3 的相關性: " + pc.correlation(score1Array, score3Array));
         System.out.println("SCORE2 與 SCORE3 的相關性: " + pc.correlation(score2Array, score3Array));
