@@ -30,7 +30,19 @@ public class StringDemo6 {
 		
 		// 假設 SCORE1, SCORE2, SCORE3 是該名學生的三次考試成績
 		// 請印出成績是逐漸進步的學生名字
+		System.out.println("成績是逐漸進步的學生名字:");
+		for(Student student : students) {
+			if(student.isImproving()) {
+				System.out.printf("%s 成績:%s %s %s\n", student.NAME, student.SCORE1, student.SCORE2, student.SCORE3);
+			}
+		}
 		
+		System.out.println("成績是逐漸退步的學生名字:");
+		for(Student student : students) {
+			if(!student.isImproving()) {
+				System.out.printf("%s 成績:%s %s %s\n", student.NAME, student.SCORE1, student.SCORE2, student.SCORE3);
+			}
+		}
 		
 	}
 
