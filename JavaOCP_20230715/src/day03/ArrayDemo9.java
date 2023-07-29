@@ -1,4 +1,8 @@
 package day03;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 /*
 給你一個整數陣列 arr，請找出陣列中的最小偶數並回傳，如果沒有任何偶數，請回傳 "null"。
 要求：
@@ -25,10 +29,26 @@ arr = {1, 3, 5, 7, 9}
 public class ArrayDemo9 {
 
 	public static void main(String[] args) {
-		/*
-		 * 
-		 * */
-
+		//int[] arr = {1, 5, 6, 2, 3};
+		int[] arr = {1, 3, 5, 7, 9};
+		System.out.println("arr:" + Arrays.toString(arr));
+		// 找出最小偶數
+		int minEven = Integer.MAX_VALUE; // int 的最大值
+		for(int num : arr) {
+			if(num % 2 == 0 && num < minEven) {
+				minEven = num;
+			}
+		}
+		System.out.println("最小偶數:" + (minEven == Integer.MAX_VALUE?"null":minEven));
+		
+		// 使用 java Stream
+		minEven = IntStream.of(arr)
+				.filter(num -> num % 2 == 0)
+				.min()
+				.orElse(Integer.MAX_VALUE);
+		
+		System.out.println("最小偶數:" + (minEven == Integer.MAX_VALUE?"null":minEven));
+		
 	}
 
 }
