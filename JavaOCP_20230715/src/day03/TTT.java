@@ -23,13 +23,15 @@ public class TTT {
 	}
 	
 	private static void printTTT(char[] ttt) {
-		for(int i=0;i<ttt.length;i++) {
-			System.out.print(ttt[i]);
-			if(i % 3 == 2 && i < 8) {
-				System.out.println("\n---");
+		System.out.println("-------------");
+		for(int i = 0; i < ttt.length ;i++) {
+			if(i == 0)System.out.print("|");
+			System.out.print(" " + ttt[i] +" |");
+			if(i % 3 == 2) {
+				System.out.println("\n-------------");
+				if(i != ttt.length-1)System.out.print("|");
 			}
 		}
-		System.out.println("\n........");
 	}
 	
 }
