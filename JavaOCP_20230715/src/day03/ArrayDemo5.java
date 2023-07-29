@@ -34,6 +34,8 @@ public class ArrayDemo5 {
 		System.out.println("newArray:" + Arrays.toString(newArr));
 		
 		// 步驟 4: arr 指向新陣列 newArr
+		arr = newArr;
+		System.out.println("arr:" + Arrays.toString(arr));
 		
 
 	}
