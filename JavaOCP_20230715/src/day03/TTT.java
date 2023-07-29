@@ -22,11 +22,19 @@ public class TTT {
 				continue;
 			}
 			ttt[idx] = 'O';
+			// 印出結果
+			printTTT(ttt);
 			// 判定'O'是否賓果 ?
 			if(ttt[0]+ttt[1]+ttt[2] == 237 || ttt[3]+ttt[4]+ttt[5] == 237 || ttt[6]+ttt[7]+ttt[8] == 237 ||
 			   ttt[0]+ttt[3]+ttt[6] == 237 || ttt[1]+ttt[4]+ttt[7] == 237 || ttt[2]+ttt[5]+ttt[8] == 237 || 
 			   ttt[0]+ttt[4]+ttt[8] == 237 || ttt[2]+ttt[4]+ttt[6] == 237) {
 				System.out.println("O Win");
+				break;
+			}
+			
+			// 判斷是否和局 ?
+			if(checkFull(ttt)) {
+				System.out.println("和局");
 				break;
 			}
 			
@@ -39,6 +47,8 @@ public class TTT {
 				break;
 			}
 			ttt[idx] = 'X';
+			// 印出結果
+			printTTT(ttt);
 			// 判定'X'是否賓果 ?
 			if(ttt[0]+ttt[1]+ttt[2] == 264 || ttt[3]+ttt[4]+ttt[5] == 264 || ttt[6]+ttt[7]+ttt[8] == 264 ||
 			   ttt[0]+ttt[3]+ttt[6] == 264 || ttt[1]+ttt[4]+ttt[7] == 264 || ttt[2]+ttt[5]+ttt[8] == 264 || 
@@ -47,7 +57,6 @@ public class TTT {
 				break;
 			}
 			
-			printTTT(ttt);
 		} while (true);
 		
 	}
@@ -62,6 +71,15 @@ public class TTT {
 				if(i != ttt.length-1)System.out.print("|");
 			}
 		}
+	}
+	
+	private static boolean checkFull(char[] ttt) {
+		for(char c : ttt) {
+			if(c == ' ') {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 }
