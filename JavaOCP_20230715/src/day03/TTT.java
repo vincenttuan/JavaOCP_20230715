@@ -25,9 +25,7 @@ public class TTT {
 			// 印出結果
 			printTTT(ttt);
 			// 判定'O'是否賓果 ?
-			if(ttt[0]+ttt[1]+ttt[2] == 237 || ttt[3]+ttt[4]+ttt[5] == 237 || ttt[6]+ttt[7]+ttt[8] == 237 ||
-			   ttt[0]+ttt[3]+ttt[6] == 237 || ttt[1]+ttt[4]+ttt[7] == 237 || ttt[2]+ttt[5]+ttt[8] == 237 || 
-			   ttt[0]+ttt[4]+ttt[8] == 237 || ttt[2]+ttt[4]+ttt[6] == 237) {
+			if(checkWin('O', ttt)) {
 				System.out.println("O Win");
 				break;
 			}
@@ -50,9 +48,7 @@ public class TTT {
 			// 印出結果
 			printTTT(ttt);
 			// 判定'X'是否賓果 ?
-			if(ttt[0]+ttt[1]+ttt[2] == 264 || ttt[3]+ttt[4]+ttt[5] == 264 || ttt[6]+ttt[7]+ttt[8] == 264 ||
-			   ttt[0]+ttt[3]+ttt[6] == 264 || ttt[1]+ttt[4]+ttt[7] == 264 || ttt[2]+ttt[5]+ttt[8] == 264 || 
-			   ttt[0]+ttt[4]+ttt[8] == 264 || ttt[2]+ttt[4]+ttt[6] == 264) {
+			if(checkWin('X', ttt)) {
 				System.out.println("X Win");
 				break;
 			}
@@ -61,6 +57,16 @@ public class TTT {
 		
 	}
 	
+	// 判輸贏
+	private static boolean checkWin(char player, char[] ttt) {
+		int score = (player == 'O' ? 237 : 264);
+		boolean result = (ttt[0]+ttt[1]+ttt[2] == score || ttt[3]+ttt[4]+ttt[5] == score || ttt[6]+ttt[7]+ttt[8] == score ||
+						  ttt[0]+ttt[3]+ttt[6] == score || ttt[1]+ttt[4]+ttt[7] == score || ttt[2]+ttt[5]+ttt[8] == score || 
+						  ttt[0]+ttt[4]+ttt[8] == score || ttt[2]+ttt[4]+ttt[6] == score);
+		return result;
+	}
+	
+	// 印出棋盤
 	private static void printTTT(char[] ttt) {
 		System.out.println("-------------");
 		for(int i = 0; i < ttt.length ;i++) {
@@ -73,6 +79,7 @@ public class TTT {
 		}
 	}
 	
+	// 判斷和局
 	private static boolean checkFull(char[] ttt) {
 		for(char c : ttt) {
 			if(c == ' ') {
