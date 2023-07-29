@@ -8,20 +8,13 @@ public class TTT {
 	public static void main(String[] args) {
 		//System.out.println('O'+'O'+'O'); // 237
 		//System.out.println('X'+'X'+'X'); // 264
-		Random random = new Random();
 		char[] ttt = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 		printTTT(ttt);
 		do {
 			// User:
-			System.out.print("請選擇位置0~8:");
-			Scanner scanner = new Scanner(System.in);
-			int idx = scanner.nextInt();
-			// 檢查 idx 是否合法 ?
-			if(idx < 0 || idx > 8 || ttt[idx] != ' ') {
-				System.out.println("位置輸入不正確");
+			if(!userPlay(ttt)) {
 				continue;
 			}
-			ttt[idx] = 'O';
 			// 印出結果
 			printTTT(ttt);
 			// 判定'O'是否賓果 ?
@@ -37,14 +30,7 @@ public class TTT {
 			}
 			
 			// PC:
-			while (true) {
-				idx = random.nextInt(ttt.length);
-				if(ttt[idx] != ' ') {
-					continue;
-				}
-				break;
-			}
-			ttt[idx] = 'X';
+			pcPlay(ttt);
 			// 印出結果
 			printTTT(ttt);
 			// 判定'X'是否賓果 ?
@@ -55,6 +41,34 @@ public class TTT {
 			
 		} while (true);
 		
+	}
+	
+	// User play
+	private static boolean userPlay(char[] ttt) {
+		System.out.print("請選擇位置0~8:");
+		Scanner scanner = new Scanner(System.in);
+		int idx = scanner.nextInt();
+		// 檢查 idx 是否合法 ?
+		if(idx < 0 || idx > 8 || ttt[idx] != ' ') {
+			System.out.println("位置輸入不正確");
+			return false;
+		}
+		ttt[idx] = 'O';
+		return true;
+	}
+	
+	// PC Play
+	private static void pcPlay(char[] ttt) {
+		Random random = new Random();
+		int idx = 0;
+		while (true) {
+			idx = random.nextInt(ttt.length);
+			if(ttt[idx] != ' ') {
+				continue;
+			}
+			break;
+		}
+		ttt[idx] = 'X';
 	}
 	
 	// 判輸贏
