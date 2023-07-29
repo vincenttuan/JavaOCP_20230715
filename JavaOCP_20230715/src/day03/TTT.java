@@ -1,22 +1,36 @@
 package day03;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TTT {
 	
 	public static void main(String[] args) {
+		Random random = new Random();
 		char[] ttt = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 		printTTT(ttt);
-		int count = 0;
 		do {
+			// User:
 			System.out.print("請選擇位置0~8:");
 			Scanner scanner = new Scanner(System.in);
 			int idx = scanner.nextInt();
-			if(count++ % 2 == 0) {
-				ttt[idx] = 'O';
-			} else {
-				ttt[idx] = 'X';
+			// 檢查 idx 是否合法 ?
+			if(idx < 0 || idx > 8 || ttt[idx] != ' ') {
+				System.out.println("位置輸入不正確");
+				continue;
 			}
+			ttt[idx] = 'O';
+			
+			// PC:
+			while (true) {
+				idx = random.nextInt(ttt.length);
+				if(ttt[idx] != ' ') {
+					continue;
+				}
+				break;
+			}
+			ttt[idx] = 'X';
+			
 			printTTT(ttt);
 		} while (true);
 		
