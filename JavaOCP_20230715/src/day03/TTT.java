@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class TTT {
 	
 	public static void main(String[] args) {
+		//System.out.println('O'+'O'+'O'); // 237
+		//System.out.println('X'+'X'+'X'); // 264
 		Random random = new Random();
 		char[] ttt = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 		printTTT(ttt);
@@ -20,6 +22,13 @@ public class TTT {
 				continue;
 			}
 			ttt[idx] = 'O';
+			// 判定'O'是否賓果 ?
+			if(ttt[0]+ttt[1]+ttt[2] == 237 || ttt[3]+ttt[4]+ttt[5] == 237 || ttt[6]+ttt[7]+ttt[8] == 237 ||
+			   ttt[0]+ttt[3]+ttt[6] == 237 || ttt[1]+ttt[4]+ttt[7] == 237 || ttt[2]+ttt[5]+ttt[8] == 237 || 
+			   ttt[0]+ttt[4]+ttt[8] == 237 || ttt[2]+ttt[4]+ttt[6] == 237) {
+				System.out.println("O Win");
+				break;
+			}
 			
 			// PC:
 			while (true) {
@@ -30,6 +39,13 @@ public class TTT {
 				break;
 			}
 			ttt[idx] = 'X';
+			// 判定'X'是否賓果 ?
+			if(ttt[0]+ttt[1]+ttt[2] == 264 || ttt[3]+ttt[4]+ttt[5] == 264 || ttt[6]+ttt[7]+ttt[8] == 264 ||
+			   ttt[0]+ttt[3]+ttt[6] == 264 || ttt[1]+ttt[4]+ttt[7] == 264 || ttt[2]+ttt[5]+ttt[8] == 264 || 
+			   ttt[0]+ttt[4]+ttt[8] == 264 || ttt[2]+ttt[4]+ttt[6] == 264) {
+				System.out.println("X Win");
+				break;
+			}
 			
 			printTTT(ttt);
 		} while (true);
