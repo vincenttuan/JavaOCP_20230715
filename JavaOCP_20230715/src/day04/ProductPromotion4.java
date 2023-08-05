@@ -17,8 +17,8 @@ public class ProductPromotion4 {
 		int totalPrice = totalPriceForA + totalPriceForB;
 		
 		// 4. 結帳並印出資料
-		PrintResult printResultA = new PrintResult(drinkA, promotionA, 22, totalPriceForA);
-		PrintResult printResultB = new PrintResult(drinkB, promotionB, 11, totalPriceForB);
+		PrintResult printResultA = new PrintResult(drinkA, promotionA, 22);
+		PrintResult printResultB = new PrintResult(drinkB, promotionB, 11);
 		printResultA.print();
 		printResultB.print();
 		
