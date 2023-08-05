@@ -16,7 +16,7 @@ import com.google.gson.JsonObject;
 
 public class OpenAiApiExample2 {
     public static void main(String[] args) throws IOException, InterruptedException {
-    	Path path = Paths.get("src/chatgpt/news.txt");
+    	Path path = Paths.get("src/chatgpt/news2.txt");
     	//Path path = Paths.get("src/chatgpt/subject.txt");
     	String prompt = Files.readString(path);
     	
@@ -32,7 +32,7 @@ public class OpenAiApiExample2 {
     	//System.out.println(postJsonString);
     	
     	
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
