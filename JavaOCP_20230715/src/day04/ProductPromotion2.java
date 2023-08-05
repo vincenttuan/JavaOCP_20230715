@@ -4,9 +4,12 @@ package day04;
  * 商品促銷
  * 假設 A 飲料 一瓶 20 元
  * 買 3 送 1
+ * 假設 B 飲料 一瓶 15 元
+ * 買 1 送 2
  * 請問買 22 瓶 A 飲料要多少錢 ?
+ * 請問買 11 瓶 B 飲料要多少錢 ?
  * */
-public class ProductPromotion {
+public class ProductPromotion2 {
 
 	public static void main(String[] args) {
 		String drinkName = "A";
