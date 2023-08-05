@@ -26,8 +26,6 @@ public class ProductPromotion4 {
 		
 		System.out.printf("總共 %d\n", totalPrice);
 		
-		
-		
 	}
 
 }
