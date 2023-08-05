@@ -16,11 +16,14 @@ public class ProductPromotion3 {
 		int totalPriceForB = promotionB.calcuateTotalPrice(11);
 		int totalPrice = totalPriceForA + totalPriceForB;
 		
-		// 4. 結帳並印出資料
-		PrintResult printResultA = new PrintResult(drinkA, promotionA, 22, totalPriceForA);
-		PrintResult printResultB = new PrintResult(drinkB, promotionB, 11, totalPriceForB);
-		printResultA.print();
-		printResultB.print();
+		// 4. 結帳
+		System.out.printf("%s 飲料一瓶 %d 元(買 %d 送 %d), 買 %d 瓶共需 %d 元\n", 
+				drinkA.getName(), drinkA.getPricePerBottle(), promotionA.getBuyNumber(), promotionA.getFreeNumber(), 
+				22, totalPriceForA);
+		
+		System.out.printf("%s 飲料一瓶 %d 元(買 %d 送 %d), 買 %d 瓶共需 %d 元\n", 
+				drinkB.getName(), drinkB.getPricePerBottle(), promotionB.getBuyNumber(), promotionB.getFreeNumber(), 
+				11, totalPriceForB);
 		
 		System.out.printf("總共 %d\n", totalPrice);
 		
