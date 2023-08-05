@@ -11,13 +11,13 @@ package day04;
 public class ProductPromotion2 {
 	
 	public static void main(String[] args) {
-		int totalPriceForA = promotion("A", 22, 20, 3, 1);
-		int totalPriceForB = promotion("B", 11, 15, 1, 1);
+		int totalPriceForA = calcuateTotalPrice("A", 22, 20, 3, 1);
+		int totalPriceForB = calcuateTotalPrice("B", 11, 15, 1, 1);
 		int totalPrice = totalPriceForA + totalPriceForB;
 		System.out.println(totalPrice);
 	}
 	
-	public static int promotion(String drinkName, int bottlesToBuy, int pricePerBottle, int buyNumber, int freeNumber) {
+	public static int calcuateTotalPrice(String drinkName, int bottlesToBuy, int pricePerBottle, int buyNumber, int freeNumber) {
 		
 		// 每一組的價格相加總
 		int groupSize = buyNumber + freeNumber;
