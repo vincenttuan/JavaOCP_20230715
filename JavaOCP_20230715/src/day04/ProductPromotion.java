@@ -9,11 +9,12 @@ package day04;
 public class ProductPromotion {
 
 	public static void main(String[] args) {
+		String drinkName = "A";
 		int bottlesToBuy = 22; // 總共要買的數量
 		
 		int pricePerBottle = 20; // A飲料每瓶價格
-		int buyNumber = 3; // 買的數量
-		int freeNumber = 1; // 送的數量
+		int buyNumber = 5; // 買的數量
+		int freeNumber = 3; // 送的數量
 		
 		// 每一組的價格相加總
 		int groupSize = buyNumber + freeNumber;
@@ -26,7 +27,10 @@ public class ProductPromotion {
 		
 		// 總計 
 		int totalPrice = bottlesToPayForInGroups + remainingBottlesToPayFor;
-		System.out.printf("總價 $%d\n", totalPrice);
+		
+		System.out.printf("%s 飲料一瓶 %d 元(買 %d 送 %d), 買 %d 瓶共需 %d 元\n", 
+				drinkName, pricePerBottle, buyNumber, freeNumber, bottlesToBuy, totalPrice);
+		
 	}
 
 }
