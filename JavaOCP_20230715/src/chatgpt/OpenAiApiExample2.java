@@ -16,22 +16,23 @@ import com.google.gson.JsonObject;
 
 public class OpenAiApiExample2 {
     public static void main(String[] args) throws IOException, InterruptedException {
-    	Path path = Paths.get("src/chatgpt/exam.txt");
+    	//Path path = Paths.get("src/chatgpt/exam.txt");
+    	Path path = Paths.get("src/chatgpt/subject.txt");
     	String prompt = Files.readString(path);
     	
     	PostData postData = new PostData();
     	postData.setModel("text-davinci-003");
     	postData.setPrompt(prompt);
-    	postData.setMax_tokens(500);
+    	postData.setMax_tokens(1000);
     	postData.setTemperature(0);
     	
     	// 透過 Gson 將 postData 轉 json 字串
     	Gson gson = new Gson();
     	String postJsonString = gson.toJson(postData);
-    	System.out.println(postJsonString);
+    	//System.out.println(postJsonString);
     	
     	
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -44,7 +45,7 @@ public class OpenAiApiExample2 {
 
         HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
         String jsonString = response.body();
-        System.out.println(jsonString);
+        //System.out.println(jsonString);
         
         JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
         
