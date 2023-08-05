@@ -32,7 +32,7 @@ public class OpenAiApiExample2 {
     	//System.out.println(postJsonString);
     	
     	
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
