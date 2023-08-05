@@ -7,7 +7,6 @@ public class ExamScore {
 	private int score4;
 	
 	public ExamScore(int score1, int score2, int score3, int score4) {
-		super();
 		this.score1 = score1;
 		this.score2 = score2;
 		this.score3 = score3;
