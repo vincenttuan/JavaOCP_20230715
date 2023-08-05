@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class ExamScoreMain {
@@ -36,6 +37,12 @@ public class ExamScoreMain {
 							 .sum();
 		int avg1 = sum1 / examScores.size();
 		System.out.printf("第一題總分 %d 平均 %d\n", sum1, avg1);
+		
+		IntSummaryStatistics stat1 = examScores.stream()
+				 							   .mapToInt(examScore -> examScore.getScore1())
+				 							   .summaryStatistics();
+		System.out.println(stat1);
+		System.out.printf("第一題總分 %d 平均 %.1f\n", stat1.getSum(), stat1.getAverage());
 		
 		// 我要計算第二題的總分與平均
 		int sum2 = examScores.stream()
