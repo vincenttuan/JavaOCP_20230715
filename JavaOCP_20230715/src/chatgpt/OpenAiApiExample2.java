@@ -16,7 +16,7 @@ import com.google.gson.JsonObject;
 
 public class OpenAiApiExample2 {
     public static void main(String[] args) throws IOException, InterruptedException {
-    	Path path = Paths.get("src/chatgpt/exam4.txt");
+    	Path path = Paths.get("src/chatgpt/news.txt");
     	//Path path = Paths.get("src/chatgpt/subject.txt");
     	String prompt = Files.readString(path);
     	
