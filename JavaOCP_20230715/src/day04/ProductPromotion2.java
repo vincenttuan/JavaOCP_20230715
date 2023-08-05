@@ -9,14 +9,15 @@ package day04;
  * 總共要花多少錢 ?
  * */
 public class ProductPromotion2 {
-
+	
 	public static void main(String[] args) {
-		String drinkName = "A";
-		int bottlesToBuy = 22; // 總共要買的數量
-		
-		int pricePerBottle = 20; // A飲料每瓶價格
-		int buyNumber = 3; // 買的數量
-		int freeNumber = 1; // 送的數量
+		int totalPriceForA = promotion("A", 22, 20, 3, 1);
+		int totalPriceForB = promotion("B", 11, 15, 1, 1);
+		int totalPrice = totalPriceForA + totalPriceForB;
+		System.out.println(totalPrice);
+	}
+	
+	public static int promotion(String drinkName, int bottlesToBuy, int pricePerBottle, int buyNumber, int freeNumber) {
 		
 		// 每一組的價格相加總
 		int groupSize = buyNumber + freeNumber;
@@ -33,6 +34,8 @@ public class ProductPromotion2 {
 		System.out.printf("%s 飲料一瓶 %d 元(買 %d 送 %d), 買 %d 瓶共需 %d 元\n", 
 				drinkName, pricePerBottle, buyNumber, freeNumber, bottlesToBuy, totalPrice);
 		
+		// 回傳總計
+		return totalPrice;
 	}
 
 }
