@@ -23,7 +23,7 @@ public class OpenAiApiExample2 {
     	PostData postData = new PostData();
     	postData.setModel("text-davinci-003");
     	postData.setPrompt(prompt);
-    	postData.setMax_tokens(1000);
+    	postData.setMax_tokens(2000);
     	postData.setTemperature(0);
     	
     	// 透過 Gson 將 postData 轉 json 字串
@@ -32,7 +32,7 @@ public class OpenAiApiExample2 {
     	//System.out.println(postJsonString);
     	
     	
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -45,7 +45,7 @@ public class OpenAiApiExample2 {
 
         HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
         String jsonString = response.body();
-        //System.out.println(jsonString);
+        System.out.println(jsonString);
         
         JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
         
