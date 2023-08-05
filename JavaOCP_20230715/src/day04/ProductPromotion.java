@@ -9,6 +9,8 @@ package day04;
 public class ProductPromotion {
 
 	public static void main(String[] args) {
+		int bottlesToBuy = 22; // 總共要買的數量
+		int pricePerBottle = 20; // A飲料每瓶價格
 		
 
 	}
