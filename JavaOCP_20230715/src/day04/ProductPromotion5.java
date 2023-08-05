@@ -10,6 +10,10 @@ package day04;
 
 public class ProductPromotion5 {
 	public static void main(String[] args) {
-		
+		int bottlesToBuy = 11; // 要購買的瓶數
+        int pricePerBottle = 20; // 每瓶飲料的價格
+        double discount = 0.6; // 第二件的折扣率
+        
+        
 	}
 }
