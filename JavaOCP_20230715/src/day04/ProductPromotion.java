@@ -13,8 +13,8 @@ public class ProductPromotion {
 		int bottlesToBuy = 22; // 總共要買的數量
 		
 		int pricePerBottle = 20; // A飲料每瓶價格
-		int buyNumber = 5; // 買的數量
-		int freeNumber = 3; // 送的數量
+		int buyNumber = 3; // 買的數量
+		int freeNumber = 1; // 送的數量
 		
 		// 每一組的價格相加總
 		int groupSize = buyNumber + freeNumber;
