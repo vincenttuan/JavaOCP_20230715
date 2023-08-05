@@ -17,13 +17,13 @@ import com.google.gson.JsonObject;
 public class OpenAiApiExample2 {
     public static void main(String[] args) throws IOException, InterruptedException {
     	Path path = Paths.get("src/chatgpt/exam.txt");
-    	String prompt = Files.readString(path) + "\n請幫我計算每題的總分與平均";
+    	String prompt = Files.readString(path);
     	
     	PostData postData = new PostData();
     	postData.setModel("text-davinci-003");
     	postData.setPrompt(prompt);
     	postData.setMax_tokens(500);
-    	postData.setTemperature(0.3);
+    	postData.setTemperature(0);
     	
     	// 透過 Gson 將 postData 轉 json 字串
     	Gson gson = new Gson();
@@ -31,7 +31,7 @@ public class OpenAiApiExample2 {
     	System.out.println(postJsonString);
     	
     	
-        String apiKey = "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";
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
