@@ -1,0 +1,37 @@
+【不重複的3位數】
+問題描述：
+0~9這10個數字可以組成多少個內容不重複的3位數。
+例如:123為不重複,122為重複。
+
+public class Contest04 {
+
+	public static void main(String[] args) {
+		
+		int[] num = new int[3];
+		int count = 1000;
+		
+		for(int i = 0; i <= 9; i++) {
+			num[0] = i;
+			for(int j = 0; j <= 9; j++) {
+				num[1] = j;
+				for(int k = 0; k <= 9; k++) {
+					num[2] = k;
+					if(num[0] == 0) {
+						count--;
+					}else if((num[0] == num[1]) || (num[0] == num[2]) || (num[1] == num[2])) {
+						count--;
+					}else {
+						System.out.print(num[0] + "" + num[1] + num[2] + " ");
+					}
+				}
+			}
+		}
+		
+		System.out.println("一共有" + count + " 個這樣的數字");
+	}
+
+}
+
+請幫我根據撰寫邏輯打分數
+功能性（最高50分）, 代碼結構和風格（最高25分）, 效能（最高15分）可讀性和可維護性（最高10分）
+對的地方可以給分或斟酌給分, 明顯錯誤的地方不加分, 總分是 0~100 之間 , 並且一定要打分數出來
