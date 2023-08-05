@@ -12,15 +12,15 @@ public class ProductPromotion4 {
 		Promotion promotionB = new Promotion(drinkB, 1, 1);
 		
 		// 3. 購買
-		int amountForA = 22;
-		int amountForB = 11;
-		int totalPriceForA = promotionA.calcuateTotalPrice(amountForA);
-		int totalPriceForB = promotionB.calcuateTotalPrice(amountForB);
+		int bottlesToBuyA = 22;
+		int bottlesToBuyB = 11;
+		int totalPriceForA = promotionA.calcuateTotalPrice(bottlesToBuyA);
+		int totalPriceForB = promotionB.calcuateTotalPrice(bottlesToBuyB);
 		int totalPrice = totalPriceForA + totalPriceForB;
 		
 		// 4. 結帳並印出資料
-		PrintResult printResultA = new PrintResult(promotionA, amountForA);
-		PrintResult printResultB = new PrintResult(promotionB, amountForB);
+		PrintResult printResultA = new PrintResult(promotionA);
+		PrintResult printResultB = new PrintResult(promotionB);
 		printResultA.print();
 		printResultB.print();
 		

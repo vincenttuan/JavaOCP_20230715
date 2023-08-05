@@ -6,6 +6,7 @@ public class Promotion {
 	private int buyNumber;
 	private int freeNumber;
 	private int totalPrice;
+	private int bottlesToBuy;
 	
 	// 計算優惠後的總價
 	// bottlesToBuy 要買幾瓶
@@ -21,6 +22,8 @@ public class Promotion {
 		
 		// 將 totalPrice 進行保存
 		setTotalPrice(totalPrice);
+		// 將 bottlesToBuy 進行保存
+		setBottlesToBuy(bottlesToBuy);
 		
 		return totalPrice;
 	}
@@ -64,7 +67,13 @@ public class Promotion {
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	
-	
+
+	public int getBottlesToBuy() {
+		return bottlesToBuy;
+	}
+
+	public void setBottlesToBuy(int bottlesToBuy) {
+		this.bottlesToBuy = bottlesToBuy;
+	}
 	
 }
