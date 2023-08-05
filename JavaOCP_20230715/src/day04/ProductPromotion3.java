@@ -16,7 +16,7 @@ public class ProductPromotion3 {
 		int totalPriceForB = promotionB.calcuateTotalPrice(11);
 		int totalPrice = totalPriceForA + totalPriceForB;
 		
-		// 4. 結帳
+		// 4. 結帳並印出資料
 		PrintResult printResultA = new PrintResult(drinkA, promotionA, 22, totalPriceForA);
 		PrintResult printResultB = new PrintResult(drinkB, promotionB, 11, totalPriceForB);
 		printResultA.print();
