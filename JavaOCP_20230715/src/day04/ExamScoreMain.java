@@ -30,13 +30,14 @@ public class ExamScoreMain {
 		
 		// 計算資料筆數
 		System.out.printf("資料筆數: %d\n", examScores.size());
-		// 我要計算第一題的總分
+		// 我要計算第一題的總分與平均
 		int sum1 = examScores.stream()
 							 .mapToInt(examScore -> examScore.getScore1())
 							 .sum();
 		int avg1 = sum1 / examScores.size();
 		System.out.printf("第一題總分 %d 平均 %d\n", sum1, avg1);
 		
+		// 我要計算第二題的總分與平均
 		int sum2 = examScores.stream()
 				 .mapToInt(examScore -> examScore.getScore2())
 				 .sum();
