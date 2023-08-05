@@ -18,11 +18,20 @@ public class OpenAiApiExample2 {
     public static void main(String[] args) throws IOException, InterruptedException {
     	Path path = Paths.get("src/chatgpt/exam.txt");
     	String prompt = Files.readString(path) + "\n請幫我計算每題的總分與平均";
-    	System.out.println(prompt);
     	
-    	/*
-        double temperature = 0.0;
-    	String apiKey = "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";
+    	PostData postData = new PostData();
+    	postData.setModel("text-davinci-003");
+    	postData.setPrompt(prompt);
+    	postData.setMax_tokens(500);
+    	postData.setTemperature(0.3);
+    	
+    	// 透過 Gson 將 postData 轉 json 字串
+    	Gson gson = new Gson();
+    	String postJsonString = gson.toJson(postData);
+    	System.out.println(postJsonString);
+    	
+    	
+        String apiKey = "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";
         String apiUrl = "https://api.openai.com/v1/completions";
 
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -30,20 +39,13 @@ public class OpenAiApiExample2 {
                 .uri(URI.create(apiUrl))
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Bearer " + apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(
-                        "{\n" +
-                        "  \"model\": \"text-davinci-003\",\n" +
-                        "  \"prompt\": \"" + prompt + "\",\n" +
-                        "  \"max_tokens\": 500,\n" +
-                        "  \"temperature\": " + temperature + "\n" +
-                        "}"))
+                .POST(HttpRequest.BodyPublishers.ofString(postJsonString))
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, BodyHandlers.ofString());
         String jsonString = response.body();
         System.out.println(jsonString);
         
-        Gson gson = new Gson();
         JsonObject jsonObject = gson.fromJson(jsonString, JsonObject.class);
         
         String text = jsonObject.getAsJsonArray("choices")
@@ -55,6 +57,6 @@ public class OpenAiApiExample2 {
         
         System.out.println("Text: " + text.replace("?", "").replace("\n", "").trim());
         System.out.println("Total Tokens: " + totalTokens);
-        */
+        
     }
 }
