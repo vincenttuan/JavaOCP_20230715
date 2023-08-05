@@ -4,6 +4,8 @@ public class Drink {
 	private String name;
 	private int pricePerBottle;
 	
+	//------------------------------------------------
+	
 	public Drink(String name, int pricePerBottle) {
 		this.name = name;
 		this.pricePerBottle = pricePerBottle;
