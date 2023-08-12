@@ -29,6 +29,4 @@ public class Bread {
 	void display() {
 		System.out.printf("%s $%d %.1f卡\n", name, price, calories);
 	}
-	
-	
 }
