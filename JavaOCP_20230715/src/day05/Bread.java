@@ -2,9 +2,28 @@ package day05;
 
 // 物件導向: 麵包設計圖
 public class Bread {
-	String name; // 麵包名稱 
-	int price; // 麵包價格
-	double calories; // 麵包卡路里
+	private String name; // 麵包名稱 
+	private int price; // 麵包價格
+	private double calories; // 麵包卡路里
+	
+	// 方法封裝 (設定麵包名稱)
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	// 設定麵包價格
+	public void setPrice(int price) {
+		if(price >= 0 && price <=1000) {
+			this.price = price;
+		}
+	}
+	
+	// 設定麵包熱量卡路里
+	public void setCalories(double calories) {
+		if(calories >= 0  && calories <= 500) {
+			this.calories = calories;
+		}
+	}
 	
 	// 顯示麵包的方法
 	void display() {
