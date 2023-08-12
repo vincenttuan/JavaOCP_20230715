@@ -15,6 +15,14 @@ public class Drink {
 		setPrice(price);
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}

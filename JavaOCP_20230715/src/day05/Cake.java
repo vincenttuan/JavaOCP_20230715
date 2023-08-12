@@ -17,6 +17,18 @@ public class Cake {
 		setSweetRating(sweetRating);
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public int getSweetRating() {
+		return sweetRating;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}

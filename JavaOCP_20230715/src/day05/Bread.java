@@ -15,12 +15,26 @@ public class Bread {
 		setPrice(price);
 		setCalories(calories);
 	}
-
-	// 方法封裝 (設定麵包名稱)
+	
+	// 方法封裝
+	
+	// 設定麵包名稱
 	public void setName(String name) {
 		this.name = name;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public double getCalories() {
+		return calories;
+	}
+
 	// 設定麵包價格
 	public void setPrice(int price) {
 		if(price >= 0 && price <=1000) {
