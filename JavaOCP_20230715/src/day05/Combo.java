@@ -92,6 +92,7 @@ public class Combo {
 		if(cake != null) {
 			sb.append(String.format("蛋糕:%s($%d) ", cake.getName(), cake.getPrice()));
 		}
+		System.out.println(sb);
 	}
 	
 	/*
