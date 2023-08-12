@@ -4,7 +4,7 @@ import java.util.Optional;
 
 //物件導向: 套餐設計圖
 public class Combo {
-	
+	private static final double RATE = 0.8;
 	private String name; // 套餐名稱
 	private int price;   // 套餐價格 (drink.getPrice() + bread.getPrice() + cake.getPrice()) * 0.8
 	private Drink drink; // 套餐飲料
@@ -46,7 +46,7 @@ public class Combo {
 		}
 		*/
 		
-		total = (int)(total * 0.8);
+		total = (int)(total * RATE);
 		setPrice(total);
 	}
 	
