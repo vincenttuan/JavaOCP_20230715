@@ -51,8 +51,9 @@ public class Combo {
 	public int getPrice() {
 		return price;
 	}
-
-	public void setPrice(int price) {
+	
+	// 不希望外界直接修改價格
+	private void setPrice(int price) {
 		this.price = price;
 	}
 
