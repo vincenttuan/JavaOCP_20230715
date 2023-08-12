@@ -6,6 +6,17 @@ public class Cake {
 	private int price; // 蛋糕價格
 	private int sweetRating; // 甜度分級(0~50)
 	
+	// 建構子
+	public Cake() {
+		
+	}
+	
+	public Cake(String name, int price, int sweetRating) {
+		setName(name);
+		setPrice(price);
+		setSweetRating(sweetRating);
+	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}

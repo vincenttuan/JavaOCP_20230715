@@ -9,8 +9,10 @@ public class CakeTest {
 		cake1.setPrice(65);
 		cake1.setSweetRating(30);
 		
+		Cake cake2 = new Cake("起司蛋糕", 40, 45);
 		
-		
+		cake1.display();
+		cake2.display();
 
 	}
 
