@@ -72,7 +72,10 @@ public class Combo {
 	}
 
 	public void setDrink(Drink drink) {
-		this.drink = drink;
+		if(drink != null) {
+			this.drink = drink;
+			calculatePrice(); // 計算套餐價格
+		}
 	}
 
 	public Bread getBread() {
@@ -80,7 +83,10 @@ public class Combo {
 	}
 
 	public void setBread(Bread bread) {
-		this.bread = bread;
+		if(bread != null) {
+			this.bread = bread;
+			calculatePrice(); // 計算套餐價格
+		}
 	}
 
 	public Cake getCake() {
@@ -88,7 +94,10 @@ public class Combo {
 	}
 
 	public void setCake(Cake cake) {
-		this.cake = cake;
+		if(cake != null) {
+			this.cake = cake;
+			calculatePrice(); // 計算套餐價格
+		}
 	}
 	
 	public void display() { // 優化寫法
