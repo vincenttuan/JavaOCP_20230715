@@ -9,10 +9,7 @@ public class BreadTest {
 		bread1.setPrice(50);
 		bread1.setCalories(100.5);
 		
-		Bread bread2 = new Bread();
-		bread2.setName("熱狗麵包");
-		bread2.setPrice(45);
-		bread2.setCalories(88.5);
+		Bread bread2 = new Bread("熱狗麵包", 45, 88.5);
 		
 		bread1.display();
 		bread2.display();

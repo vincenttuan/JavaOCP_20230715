@@ -6,6 +6,16 @@ public class Bread {
 	private int price; // 麵包價格
 	private double calories; // 麵包卡路里
 	
+	public Bread() {
+		
+	}
+	
+	public Bread(String name, int price, double calories) {
+		setName(name);
+		setPrice(price);
+		setCalories(calories);
+	}
+
 	// 方法封裝 (設定麵包名稱)
 	public void setName(String name) {
 		this.name = name;
