@@ -1,7 +1,7 @@
 package day05;
 
 // 主程式
-public class DrinkMain {
+public class DrinkTest {
 
 	public static void main(String[] args) {
 		Drink drink1 = new Drink(); // 根據 Drink 的設計圖創建一個 Drink 飲料物件
