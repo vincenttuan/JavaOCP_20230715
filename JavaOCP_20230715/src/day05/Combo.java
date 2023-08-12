@@ -82,9 +82,9 @@ public class Combo {
 	}
 
 	public void display() {
-		if(bread.getName() == null) {
+		if(bread == null) {
 			System.out.printf("%s $%d 飲料:%s 蛋糕:%s\n", name, price, drink.getName(), cake.getName());
-		} else if(cake.getName() == null) {
+		} else if(cake == null) {
 			System.out.printf("%s $%d 飲料:%s 麵包:%s\n", name, price, drink.getName(), bread.getName());
 		} else {
 			System.out.printf("%s $%d 飲料:%s 麵包:%s 蛋糕:%s\n", name, price, drink.getName(), bread.getName(), cake.getName());
