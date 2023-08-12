@@ -31,6 +31,10 @@ public class ComboTest {
 		
 		comboB.setCake(strawberry); // B 餐加點草莓蛋糕
 		comboB.display();
+		
+		// 請結帳 (A, B, C)
+		Combo[] combos = {comboA, comboB, comboC};
+		
 	}
 
 }
