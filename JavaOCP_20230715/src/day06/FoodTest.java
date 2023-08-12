@@ -1,5 +1,7 @@
 package day06;
 
+import java.util.Arrays;
+
 public class FoodTest {
 
 	public static void main(String[] args) {
@@ -27,6 +29,9 @@ public class FoodTest {
 		}
 		System.out.printf("結帳 %d\n", total2);
 		
+		// Java stream
+		int total3 = Arrays.stream(foods).mapToInt(Food::getPrice).sum();
+		System.out.printf("結帳 %d\n", total3);
 		
 
 	}
