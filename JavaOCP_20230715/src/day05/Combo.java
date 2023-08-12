@@ -80,7 +80,21 @@ public class Combo {
 	public void setCake(Cake cake) {
 		this.cake = cake;
 	}
-
+	
+	public void display() { // 優化寫法
+		StringBuilder sb = new StringBuilder();
+		// 始終會顯示的部分
+		sb.append(String.format("%s $%d 飲料:%s($%d) ", name, price, drink.getName(), drink.getPrice()));
+		// 條件性顯示的部分
+		if(bread != null) {
+			sb.append(String.format("麵包:%s($%d) ", bread.getName(), bread.getPrice()));
+		}
+		if(cake != null) {
+			sb.append(String.format("蛋糕:%s($%d) ", cake.getName(), cake.getPrice()));
+		}
+	}
+	
+	/*
 	public void display() {
 		if(bread == null) {
 			System.out.printf("%s $%d 飲料:%s($%d) 蛋糕:%s($%d)\n", 
@@ -93,5 +107,5 @@ public class Combo {
 					name, price, drink.getName(), drink.getPrice(), bread.getName(), bread.getPrice(), cake.getName(), cake.getPrice());
 		}
 	}
-	
+	*/
 }
