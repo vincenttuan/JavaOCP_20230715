@@ -14,27 +14,24 @@ public class Combo {
 		this(name, drink);
 		setBread(bread);
 		setCake(cake);
-		// 計算價格
-		int price = (int)((drink.getPrice() + bread.getPrice() + cake.getPrice()) * 0.8);
-		setPrice(price);
+		// 計算套餐價格
+		calculatePrice();
 	}
 	
 	// 飲料 + 麵包
 	public Combo(String name, Drink drink, Bread bread) {
 		this(name, drink);
 		setBread(bread);
-		// 計算價格
-		int price = (int)((drink.getPrice() + bread.getPrice()) * 0.8);
-		setPrice(price);
+		// 計算套餐價格
+		calculatePrice();
 	}
 	
 	// 飲料 + 蛋糕
 	public Combo(String name, Drink drink, Cake cake) {
 		this(name, drink);
 		setCake(cake);
-		// 計算價格
-		int price = (int)((drink.getPrice() + cake.getPrice()) * 0.8);
-		setPrice(price);
+		// 計算套餐價格
+		calculatePrice();
 	}
 	
 	// 主建構子
@@ -42,7 +39,20 @@ public class Combo {
 		setName(name);
 		setDrink(drink);
 	}
-
+	
+	// 計算套餐價格的方法
+	private void calculatePrice() {
+		int total = drink.getPrice();
+		if(bread != null) {
+			total += bread.getPrice();
+		}
+		if(cake != null) {
+			total += cake.getPrice();
+		}
+		total = (int)(total * 0.8);
+		setPrice(total);
+	}
+	
 	public String getName() {
 		return name;
 	}
