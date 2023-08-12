@@ -4,11 +4,21 @@ package day05;
 public class Combo {
 	
 	private String name; // 套餐名稱
-	private int price;   // 套餐價格
+	private int price;   // 套餐價格 (drink.getPrice() + bread.getPrice() + cake.getPrice()) * 0.8
 	private Drink drink; // 套餐飲料
 	private Bread bread; // 套餐麵包
 	private Cake cake;   // 套餐蛋糕
 	
+	public Combo(String name, Drink drink, Bread bread, Cake cake) {
+		setName(name);
+		setDrink(drink);
+		setBread(bread);
+		setCake(cake);
+		// 計算價格
+		int price = (int)((drink.getPrice() + bread.getPrice() + cake.getPrice()) * 0.8);
+		setPrice(price);
+	}
+
 	public String getName() {
 		return name;
 	}
