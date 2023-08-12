@@ -10,8 +10,22 @@ public class FoodTest {
 		SideDish soup = new SideDish("玉米湯", 50, false);
 		SideDish tea = new SideDish("紅茶", 20, true);
 		
-		// 請結帳
+		// 印出餐點
+		System.out.println(noodles);
+		System.out.println(rice);
+		System.out.println(soup);
+		System.out.println(tea);
 		
+		// 請結帳
+		int total = noodles.getPrice() + rice.getPrice() + soup.getPrice() + tea.getPrice();
+		System.out.printf("結帳 %d\n", total);
+		
+		Food[] foods = {noodles, rice, soup, tea};
+		int total2 = 0;
+		for(Food food : foods) {
+			total2 += food.getPrice();
+		}
+		System.out.printf("結帳 %d\n", total2);
 		
 		
 
