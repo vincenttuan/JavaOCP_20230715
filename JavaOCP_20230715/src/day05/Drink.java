@@ -3,11 +3,30 @@ package day05;
 // 物件導向:飲料設計圖
 public class Drink {
 	
-	String name; // 飲料名
-	int price; // 飲料價格
+	private String name; // 飲料名
+	private int price; // 飲料價格
 	
+	public Drink() {
+		
+	}
+	
+	public Drink(String name, int price) {
+		setName(name);
+		setPrice(price);
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setPrice(int price) {
+		if(price >= 0 && price <= 1000) {
+			this.price = price;
+		}
+	}
+
 	// 顯示飲料的方法
-	void display() {
+	public void display() {
 		System.out.printf("%s $%d\n", name, price);
 	}
 	
