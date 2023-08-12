@@ -1,5 +1,7 @@
 package day05;
 
+import java.util.Optional;
+
 //物件導向: 套餐設計圖
 public class Combo {
 	
@@ -40,12 +42,19 @@ public class Combo {
 	// 計算套餐價格的方法
 	private void calculatePrice() {
 		int total = drink.getPrice();
+		
+		// 若 bread 不是 null 就得到 bread 的 price 反之得到 0
+		total += Optional.ofNullable(bread).map(Bread::getPrice).orElse(0);
+		total += Optional.ofNullable(cake).map(Cake::getPrice).orElse(0);
+		/*
 		if(bread != null) {
 			total += bread.getPrice();
 		}
 		if(cake != null) {
 			total += cake.getPrice();
 		}
+		*/
+		
 		total = (int)(total * 0.8);
 		setPrice(total);
 	}
@@ -105,12 +114,16 @@ public class Combo {
 		// 始終會顯示的部分
 		sb.append(String.format("%s $%d 飲料:%s($%d) ", name, price, drink.getName(), drink.getPrice()));
 		// 條件性顯示的部分
+		Optional.ofNullable(bread).ifPresent(bread -> sb.append(String.format("麵包:%s($%d) ", bread.getName(), bread.getPrice())));
+		Optional.ofNullable(cake).ifPresent(cake -> sb.append(String.format("蛋糕:%s($%d) ", cake.getName(), cake.getPrice())));
+		/*
 		if(bread != null) {
 			sb.append(String.format("麵包:%s($%d) ", bread.getName(), bread.getPrice()));
 		}
 		if(cake != null) {
 			sb.append(String.format("蛋糕:%s($%d) ", cake.getName(), cake.getPrice()));
 		}
+		*/
 		System.out.println(sb);
 	}
 	
