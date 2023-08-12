@@ -1,5 +1,8 @@
 package day05;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class ComboTest {
 
 	public static void main(String[] args) {
@@ -34,7 +37,14 @@ public class ComboTest {
 		
 		// 請結帳 (A, B, C)
 		Combo[] combos = {comboA, comboB, comboC};
-		
+		int total = 0;
+		for(Combo combo : combos) {
+			total += combo.getPrice();
+		}
+		System.out.printf("結帳 $%d\n", total);
+		// 利用 Java Stream
+		int total2 = Arrays.stream(combos).mapToInt(Combo::getPrice).sum();
+		System.out.printf("結帳 $%d\n", total2);
 	}
 
 }
