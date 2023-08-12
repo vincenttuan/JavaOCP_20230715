@@ -13,7 +13,8 @@ public class Combo {
 	
 	// 飲料 + 麵包 + 蛋糕
 	public Combo(String name, Drink drink, Bread bread, Cake cake) {
-		this(name, drink);
+		setName(name);
+		setDrink(drink);
 		setBread(bread);
 		setCake(cake);
 		calculatePrice(); // 計算套餐價格
@@ -21,22 +22,12 @@ public class Combo {
 	
 	// 飲料 + 麵包
 	public Combo(String name, Drink drink, Bread bread) {
-		this(name, drink);
-		setBread(bread);
-		calculatePrice(); // 計算套餐價格
+		this(name, drink, bread, null);
 	}
 	
 	// 飲料 + 蛋糕
 	public Combo(String name, Drink drink, Cake cake) {
-		this(name, drink);
-		setCake(cake);
-		calculatePrice(); // 計算套餐價格
-	}
-	
-	// 主建構子
-	private Combo(String name, Drink drink) {
-		setName(name);
-		setDrink(drink);
+		this(name, drink, null, cake);
 	}
 	
 	// 計算套餐價格的方法
