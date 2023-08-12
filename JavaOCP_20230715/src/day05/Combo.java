@@ -9,6 +9,7 @@ public class Combo {
 	private Bread bread; // 套餐麵包
 	private Cake cake;   // 套餐蛋糕
 	
+	// 飲料 + 麵包 + 蛋糕
 	public Combo(String name, Drink drink, Bread bread, Cake cake) {
 		setName(name);
 		setDrink(drink);
@@ -16,6 +17,26 @@ public class Combo {
 		setCake(cake);
 		// 計算價格
 		int price = (int)((drink.getPrice() + bread.getPrice() + cake.getPrice()) * 0.8);
+		setPrice(price);
+	}
+	
+	// 飲料 + 麵包
+	public Combo(String name, Drink drink, Bread bread) {
+		setName(name);
+		setDrink(drink);
+		setBread(bread);
+		// 計算價格
+		int price = (int)((drink.getPrice() + bread.getPrice()) * 0.8);
+		setPrice(price);
+	}
+	
+	// 飲料 + 蛋糕
+	public Combo(String name, Drink drink, Cake cake) {
+		setName(name);
+		setDrink(drink);
+		setCake(cake);
+		// 計算價格
+		int price = (int)((drink.getPrice() + cake.getPrice()) * 0.8);
 		setPrice(price);
 	}
 
