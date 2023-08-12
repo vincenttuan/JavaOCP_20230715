@@ -25,7 +25,12 @@ public class ComboTest {
 		comboB.display();
 		comboC.display();
 		
-
+		// 換餐點
+		comboA.setDrink(coffee); // A 餐飲料換咖啡
+		comboA.display();
+		
+		comboB.setCake(strawberry); // B 餐加點草莓蛋糕
+		comboB.display();
 	}
 
 }
