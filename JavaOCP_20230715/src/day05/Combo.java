@@ -82,7 +82,13 @@ public class Combo {
 	}
 
 	public void display() {
-		System.out.printf("%s $%d 飲料:%s 麵包:%s 蛋糕:%s\n", name, price, drink.getName(), bread.getName(), cake.getName());
+		if(bread.getName() == null) {
+			System.out.printf("%s $%d 飲料:%s 蛋糕:%s\n", name, price, drink.getName(), cake.getName());
+		} else if(cake.getName() == null) {
+			System.out.printf("%s $%d 飲料:%s 麵包:%s\n", name, price, drink.getName(), bread.getName());
+		} else {
+			System.out.printf("%s $%d 飲料:%s 麵包:%s 蛋糕:%s\n", name, price, drink.getName(), bread.getName(), cake.getName());
+		}
 	}
 	
 }
