@@ -2,6 +2,11 @@ package day06;
 
 public class SideDish extends Food {
 	private boolean containSugar;
+	
+	public SideDish(String name, int price, boolean containSugar) {
+		super(name, price);
+		this.containSugar = containSugar;
+	}
 
 	public boolean isContainSugar() {
 		return containSugar;
