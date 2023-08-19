@@ -7,7 +7,7 @@ public class CoffeeShop {
 	public static void main(String[] args) {
 		Coffee espresso = new Espresso("義式濃縮", 35);
 		Coffee cappuccino = new Cappuccino("卡布奇諾", 55);
-		Coffee latte = new Latte("拿鐵", 50);
+		Coffee latte = new Latte("拿鐵咖啡", 50);
 		Coffee vanillaLatte = new VanillaLatte();
 		Coffee greenTeaLatte = new GreenTeaLatte();
 		Coffee matchaLatte = new MatchaLatte();
