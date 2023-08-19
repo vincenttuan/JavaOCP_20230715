@@ -7,6 +7,7 @@ public class VanillaLatte extends Latte {
 	}
 
 	public void roastMethod() {
+		System.out.println("混合香草糖漿，再使用濃縮咖啡，混合蒸汽牛奶。");
 	}
 	 
 }
