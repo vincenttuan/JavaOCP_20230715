@@ -12,6 +12,7 @@ public class Manager extends Employee {
 		System.out.println("M2");
 	}
 	
+	@Override // 覆寫方法
 	public void job() {
 		System.out.println("做管理工作");
 	}
