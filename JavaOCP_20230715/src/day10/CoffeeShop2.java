@@ -11,11 +11,15 @@ public class CoffeeShop2 {
 		// A
 		Combo comboA = new ComboA();
 		comboA.setCoffee(new GreenTeaLatte());
+		//comboA.setCake(new CheeseCake()); // 無法呼叫
+		
 		// B
 		Combo comboB = new ComboB();
+		//comboB.setCake(new CheeseCake()); // 無法呼叫
+		
 		// F
-		ComboF comboF = new ComboF();
-		comboF.setCake(new CheeseCake());
+		Combo comboF = new ComboF();
+		((ComboF)comboF).setCake(new CheeseCake()); // 轉 ComboF 後就可以呼叫
 		comboF.setCoffee(new VanillaLatte());
 		
 		System.out.printf("%s %s $%d %s $%d\n", 
