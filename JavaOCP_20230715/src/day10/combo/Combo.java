@@ -4,7 +4,7 @@ import day10.Cake;
 import day10.Coffee;
 
 // 組合餐
-public class Combo {
+public abstract class Combo {
 	private String name;
 	private Cake cake;
 	private Coffee coffee;
