@@ -5,11 +5,12 @@ public class Employee {
 	private int salary;
 	
 	public Employee() {
-		
+		System.out.println("E1");
 	}
 	
 	public Employee(int salary) {
-		this.salary = salary;
+		System.out.println("E2");
+		setSalary(salary);
 	}
 
 	public int getSalary() {
