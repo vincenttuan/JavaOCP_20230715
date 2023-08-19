@@ -1,6 +1,6 @@
 package day10;
 
-public class Latte extends Coffee {
+public class Latte extends Espresso {
  
 	public Latte(String name, int price) {
 		super(name, price);
