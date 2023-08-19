@@ -3,6 +3,7 @@ package day07;
 public class Employee {
 	
 	private int salary;
+	protected String dept; // 部門
 	
 	public Employee() {
 		System.out.println("E1");
