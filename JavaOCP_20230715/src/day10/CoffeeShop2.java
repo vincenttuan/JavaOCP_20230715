@@ -23,6 +23,15 @@ public class CoffeeShop2 {
 				comboA.getCake().getName(), comboA.getCake().getPrice(),
 				comboA.getCoffee().getName(), comboA.getCoffee().getPrice());
 		
+		System.out.printf("%s %s $%d %s $%d\n", 
+				comboB.getName(), 
+				comboB.getCake().getName(), comboB.getCake().getPrice(),
+				comboB.getCoffee().getName(), comboB.getCoffee().getPrice());
+		
+		System.out.printf("%s %s $%d %s $%d\n", 
+				comboF.getName(), 
+				comboF.getCake().getName(), comboF.getCake().getPrice(),
+				comboF.getCoffee().getName(), comboF.getCoffee().getPrice());
 	}
 
 }
