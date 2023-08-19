@@ -7,6 +7,7 @@ public class Espresso extends Coffee {
 	}
 	 
 	public void roastMethod() {
+		System.out.println("深度烘焙，使用少量水快速沖煮。");
 	}
 	 
 }

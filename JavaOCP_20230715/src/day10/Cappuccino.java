@@ -7,6 +7,7 @@ public class Cappuccino extends Coffee {
 	}
 	 
 	public void roastMethod() {
+		System.out.println("使用濃縮咖啡，加入打發的牛奶泡沫。");
 	}
 	 
 }
