@@ -22,7 +22,17 @@ public class FunctionDemo1 {
 		System.out.println(func2.apply(25));
 		
 		// 計算BMI
+		Function<Double[], Double> func3 = (array) -> {
+			double h = array[0];
+			double w = array[1];
+			double bmi = w / Math.pow(h/100, 2);
+			return bmi;
+		};
 		
+		Double[] values = {170.0, 60.0};
+		System.out.println(func3.apply(values));
+		
+		System.out.println(func3.apply(new Double[] {166.5, 53.7}));
 
 	}
 
