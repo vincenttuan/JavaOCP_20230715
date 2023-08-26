@@ -24,4 +24,10 @@ public interface Single {
 	private void selfMethod() {
 		System.out.println("self");
 	}
+	
+	// 巢狀介面-NestedInterface
+	interface Nested {
+		void call();
+	}
+	
 }
