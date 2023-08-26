@@ -30,7 +30,8 @@ public class SupplierDemo {
 					.distinct()  // 不重複
 					.limit(5)  // 選五個
 					.boxed() // 將 int 轉 Integer
-					.toArray(Integer[]::new);
+					//.toArray(Integer[]::new);
+					.toArray(size -> new Integer[size]);
 		};
 		
 		System.out.println(Arrays.toString(lottoSupplier.get()));
