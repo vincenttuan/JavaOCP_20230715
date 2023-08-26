@@ -29,7 +29,22 @@ public class PredicateDemo1 {
 			  //.filter(score -> score >= 60)
 			  .filter(pass)
 			  .forEach(System.out::println);
-
+		
+		// 印出及格分數
+		String[] scoreArray = {"100", "一百", "40", "80", null, "70"};
+		
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
