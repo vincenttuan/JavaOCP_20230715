@@ -7,5 +7,7 @@ public abstract class ACar implements Car {
 		System.out.println("用腳踩煞車");
 	}
 	
+	protected abstract void fuelType();
+	
 }
  

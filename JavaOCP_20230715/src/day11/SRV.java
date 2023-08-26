@@ -7,5 +7,9 @@ public class SRV extends ACar {
 		System.out.println("鑰匙啟動");
 	}
 	 
+	@Override
+	public void fuelType() {
+		System.out.println("油電混合車");
+	}
 }
  
