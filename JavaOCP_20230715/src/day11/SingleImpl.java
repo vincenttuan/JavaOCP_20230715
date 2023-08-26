@@ -1,6 +1,11 @@
 package day11;
 
-public class SingleImpl implements Single {
+public class SingleImpl implements Single, Single.Nested {
+	@Override
+	public void call() {
+		System.out.println("Call Me");
+	}
+	
 	@Override
 	public int calc(int x, int y) {
 		return x + y;
@@ -16,5 +21,8 @@ public class SingleImpl implements Single {
 		Single.foo();
 		single.bar();
 		System.out.println(single.calc(10, 20));
+		((SingleImpl)single).call();
 	}
+
+	
 }
