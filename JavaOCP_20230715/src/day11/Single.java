@@ -9,9 +9,9 @@ package day11;
 public interface Single {
 	int calc(int x, int y);
 	static void foo() {
-		
+		System.out.println("foo");
 	}
 	default void bar() {
-		// ...
+		System.out.println("bar");
 	}
 }
