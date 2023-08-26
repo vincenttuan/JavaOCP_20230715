@@ -7,6 +7,7 @@ public abstract class ToyCar implements Car {
 		System.out.println("自然停止");
 	}
 	
+	protected abstract void toyType();
 	 
 }
  

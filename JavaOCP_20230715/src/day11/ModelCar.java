@@ -7,5 +7,9 @@ public class ModelCar extends ToyCar {
 		System.out.println("不動-靜態展示");
 	}
 	 
+	@Override
+	protected void toyType() {
+		System.out.println("模型車");
+	}
 }
  
