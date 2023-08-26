@@ -3,7 +3,7 @@ package day12;
 import java.util.function.Consumer;
 import static java.lang.System.out;
 
-public class FunctionDemo1 {
+public class ConsumerDemo1 {
 	/*
 	 * @FunctionalInterface
 	 * public interface Consumer<T> {
