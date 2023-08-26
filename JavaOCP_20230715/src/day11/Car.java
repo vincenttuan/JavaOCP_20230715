@@ -1,5 +1,7 @@
 package day11;
 
+import java.util.Random;
+
 public interface Car {
 	// 抽象方法(待實作的方法)
 	void start(); // public abstract void start();
