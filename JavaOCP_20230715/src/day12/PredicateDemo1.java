@@ -32,8 +32,24 @@ public class PredicateDemo1 {
 		
 		// 印出及格分數
 		String[] scoreArray = {"100", "一百", "40", "80", null, "70"};
+		Arrays.stream(scoreArray)
+			  // 過濾不是 null 的資料
+			  .filter(str -> str != null)
+			  // 使用正則表達式來過濾出是數字的字串
+			  .filter(str -> str.matches("\\d+"))
+			  // 將數字字串轉成 int 並檢查是否及格
+			  .filter(str -> Integer.parseInt(str) >= 60)
+			  .forEach(System.out::println);
 		
 		
+		Arrays.stream(scoreArray)
+			  .filter(str -> str != null && str.matches("\\d+") && Integer.parseInt(str) >= 60)
+			  .forEach(System.out::println);
+		
+		Predicate<String> myFilter = str -> str != null && str.matches("\\d+") && Integer.parseInt(str) >= 60;
+		Arrays.stream(scoreArray)
+			  .filter(myFilter)
+			  .forEach(System.out::println);
 	}
 
 }
