@@ -1,8 +1,9 @@
 package day11;
 
 public interface Car {
- 
-	public abstract void start();
-	public abstract void stop();
+	
+	void start(); // public abstract void start();
+	void stop();  // public abstract void stop();
+	
 }
  
