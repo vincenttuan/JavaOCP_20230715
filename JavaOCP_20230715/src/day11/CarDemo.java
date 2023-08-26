@@ -28,6 +28,37 @@ public class CarDemo {
 		ACar[] acars = {car1, car2};
 		ToyCar[] toyCars = {car3, car4};
 		
+		System.out.println("---------------");
+		// 分析
+		for(Car car : cars) {
+			car.start();
+			car.stop();
+			
+			// car 的實體是否是 ACar ?
+			if(car instanceof ACar) {
+				// 安全地進行強制轉型
+				((ACar)car).fuelType();
+			}
+			
+			// car 的實體是否是 ToyCar ?
+			if(car instanceof ToyCar) {
+				// 安全地進行強制轉型
+				((ToyCar)car).toyType();
+			}
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
