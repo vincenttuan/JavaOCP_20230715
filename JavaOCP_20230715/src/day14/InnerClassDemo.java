@@ -1,9 +1,15 @@
 package day14;
 
 class Outer { // 外部類別
+	int x = 7; // Outer 的物件變數
 	class Inner { // 內部類別
+		int x = 77;  // Inner 的物件變數
 		void print() {
+			int x = 777;  // 區域變數
 			System.out.println("Hello inner !");
+			System.out.println(x); // 777
+			System.out.println(this.x); // 77
+			System.out.println(Outer.this.x); // 7
 		}
 	}
 	
