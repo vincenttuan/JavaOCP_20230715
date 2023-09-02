@@ -50,8 +50,19 @@ class School { // 學校:外部類別
 public class SchoolDemo {
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		School school = new School();
+		School.Teacher teacher = school.new Teacher();
+		teacher.teach();
+		//----------------------------------------------
+		School.Course.display();
+		//----------------------------------------------
+		school.organizeSeminar();
+		//----------------------------------------------
+		school.schoolAnniversary();
 	}
 
 }
+
+
+
+
