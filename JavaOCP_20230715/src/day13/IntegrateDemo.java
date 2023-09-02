@@ -24,7 +24,7 @@ public class IntegrateDemo {
 		);
 		
 		// 2. Predicate: 篩選價格超過 150 的書
-		Predicate<Book> expensiveBooks = book -> book.getPrice() > 150;
+		Predicate<Book> expensiveBooks = book -> book.getPrice() >= 150;
 		
 		// 3. Function: 轉換只包含書名與價格的字串
 		Function<Book, String> bookToString = 
