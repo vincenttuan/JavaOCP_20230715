@@ -4,9 +4,22 @@ public class Book { // 書
 	String name; // 書名
 	BookTag tag;  // 標籤
 	int price; // 價格
+	
 	Book(String name) {
 		this.name = name;
 	}
+	
+	Book(String name, int price) {
+		this.name = name;
+		this.price = price;
+	}
+	
+	Book(String name, int price, BookTag tag) {
+		this.name = name;
+		this.price = price;
+		this.tag = tag;
+	}
+	
 	void setTag(BookTag tag) { // 設定標籤
 		this.tag = tag;
 	}
