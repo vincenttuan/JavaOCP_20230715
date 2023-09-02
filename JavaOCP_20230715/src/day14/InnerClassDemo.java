@@ -32,6 +32,21 @@ class Outer { // 外部類別
 		demo.show();
 	}
 	
+	// 介面用於給匿名內部類別使用
+	interface Greeting {
+		void sayHello();
+	}
+	
+	// 利用匿名內部類別來實現 Greeting 介面
+	void displayGreeting() {
+		Greeting greeting = new Greeting() {
+			@Override
+			public void sayHello() {
+				System.out.println("Hello 匿名內部類別 !");
+			}
+		};
+		greeting.sayHello();
+	}
 	
 }
 
@@ -47,7 +62,8 @@ public class InnerClassDemo {
 		sin.display();
 		//-------------------------------------
 		ou.foo();
-		
+		//-------------------------------------
+		ou.displayGreeting();
 	}
 
 }
