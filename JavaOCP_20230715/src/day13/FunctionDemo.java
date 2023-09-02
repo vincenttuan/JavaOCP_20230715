@@ -1,6 +1,7 @@
 package day13;
 
 import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 
 /*
 @FunctionalInterface
@@ -36,7 +37,22 @@ public class FunctionDemo {
 		System.out.println(calcPrice.apply('S', 100));
 		System.out.println(calcPrice.apply('M', 100));
 		System.out.println(calcPrice.apply('L', 100));
-
+		
+		//BiFunction<Double, Double, Double> calcBmi = (h, w) -> w / Math.pow(h/100, 2);
+		BinaryOperator<Double> calcBmi = (h, w) -> w / Math.pow(h/100, 2);
+		System.out.println(calcBmi.apply(170.0, 60.0));
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
