@@ -2,6 +2,8 @@ package day13;
 
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 /*
 @FunctionalInterface
@@ -42,6 +44,9 @@ public class FunctionDemo {
 		BinaryOperator<Double> calcBmi = (h, w) -> w / Math.pow(h/100, 2);
 		System.out.println(calcBmi.apply(170.0, 60.0));
 		
+		//Function<Double, Double> calcArea = (r) -> Math.pow(r, 2) * Math.PI;
+		UnaryOperator<Double> calcArea = (r) -> Math.pow(r, 2) * Math.PI;
+		System.out.println(calcArea.apply(10.5));
 	}
 
 }
