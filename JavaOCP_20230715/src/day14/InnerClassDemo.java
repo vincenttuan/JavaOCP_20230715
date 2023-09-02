@@ -1,7 +1,5 @@
 package day14;
 
-import org.apache.commons.math3.ode.ContinuousOutputModel;
-
 class Outer { // 外部類別
 	int x = 7; // Outer 的物件變數
 	class Inner { // 內部類別(不可以有 static 成員)
