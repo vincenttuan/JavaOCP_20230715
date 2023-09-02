@@ -45,6 +45,13 @@ class School { // 學校:外部類別
 		};
 		celebration.celebrate(); // 執行慶祝活動
 	}
+	
+	void schoolSport() { // 運動會
+		// 利用 Lambda 語法來實現運動會慶祝活動
+		Celebration celebration = () -> System.out.println("正在舉辦運動會...");
+		celebration.celebrate(); // 執行慶祝活動
+	}
+	
 }
 
 public class SchoolDemo {
@@ -59,6 +66,7 @@ public class SchoolDemo {
 		school.organizeSeminar();
 		//----------------------------------------------
 		school.schoolAnniversary();
+		school.schoolSport();
 	}
 
 }
