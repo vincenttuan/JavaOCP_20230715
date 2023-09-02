@@ -33,8 +33,8 @@ public class IntegrateDemo2 {
 		BiConsumer<Book, BookTag> setBookTag = Book::setTag;
 		
 		// 3. BiPredicate: 過濾特定的標籤(技術類)價格(>=150)
-		BiPredicate<BookTag, Integer> filterTagAndPrice = 
-				(tag, price) -> tag == BookTag.技術類 && price >= 150;
+		BiPredicate<Book, BookTag> filterTagAndPrice = 
+				(book, tag) -> book.getTag() == tag && book.getPrice() >= 150;
 		
 		// 4. UnaryOperation: 給予書籍特定的折扣(打九折)
 		UnaryOperator<Book> applyDiscount = book -> {
@@ -46,7 +46,7 @@ public class IntegrateDemo2 {
 		// 進行 Streram API 分析
 		bookSupplier.get().stream()  // 從 Supplier 獲取書籍列表
 			.peek(book -> setBookTag.accept(book, BookTag.技術類))
-			.filter(book -> filterTagAndPrice.test(book.getTag(), book.getPrice()))
+			.filter(book -> filterTagAndPrice.test(book, BookTag.技術類))
 			.map(applyDiscount) // 使用 UnaryOperation 來折扣 
 			.forEach(out::println); // 印出書籍資訊
 
