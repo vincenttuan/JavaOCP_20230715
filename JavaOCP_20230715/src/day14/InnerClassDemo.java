@@ -22,9 +22,12 @@ class Outer { // 外部類別
 	}
 	
 	void foo() { // 方法
+		int a = 100; // 區域變數(若該變數有給方法內部類別使用, 編譯時就會加入 final)
+		//a = 101;
 		class Demo { // 方法內部類別
 			void show() {
 				System.out.println("Hello 方法內部類別 !");
+				System.out.println(a); // a 必須是 final 變數
 			}
 		}
 		Demo demo = new Demo(); // 要自己 new
