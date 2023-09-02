@@ -1,5 +1,10 @@
 package day13;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Supplier;
+import static java.lang.System.out;
+
 /********************************************************************************
  * Supplier, BiConsumer, BiPredicate, UnaryOperation (<-Function)
  * 1. Supplier:       提供書籍列表       Supplier<T>       不接受參數, 返回結果的類型是 T
@@ -10,9 +15,20 @@ package day13;
  * @version: 1.0
 ********************************************************************************/
 public class IntegrateDemo2 {
-
+	
 	public static void main(String[] args) {
+		// 1. Supplier: 提供書籍列表
+		Supplier<List<Book>> bookSupplier = () -> Arrays.asList(
+				new Book("快快樂樂學程式", 100),
+				new Book("快快樂樂學電腦", 200),
+				new Book("台灣旅遊", 150),
+				new Book("生日蛋糕製作", 120)
+		);
 		
+		
+		// 進行 Streram API 分析
+		bookSupplier.get().stream()  // 從 Supplier 獲取書籍列表
+			.forEach(out::println); // 印出書籍資訊
 
 	}
 
