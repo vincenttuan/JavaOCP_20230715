@@ -49,7 +49,7 @@ public class IntegrateDemo2 {
 			.filter(book -> filterTagAndPrice.test(book, BookTag.技術類))
 			.map(applyDiscount) // 使用 UnaryOperation 來折扣 
 			.forEach(out::println); // 印出書籍資訊
-
+		
 	}
 
 }
