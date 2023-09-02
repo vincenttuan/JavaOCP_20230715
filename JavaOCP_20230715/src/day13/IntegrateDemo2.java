@@ -2,7 +2,11 @@ package day13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiPredicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
+
 import static java.lang.System.out;
 
 /********************************************************************************
@@ -21,13 +25,29 @@ public class IntegrateDemo2 {
 		Supplier<List<Book>> bookSupplier = () -> Arrays.asList(
 				new Book("快快樂樂學程式", 100),
 				new Book("快快樂樂學電腦", 200),
-				new Book("台灣旅遊", 150),
-				new Book("生日蛋糕製作", 120)
+				new Book("無痛學Python", 150),
+				new Book("24天搞定Java", 120)
 		);
 		
+		// 2. BiConsumer: 設定書的標籤
+		BiConsumer<Book, BookTag> setBookTag = Book::setTag;
 		
+		// 3. BiPredicate: 過濾特定的標籤(技術類)價格(>=150)
+		BiPredicate<BookTag, Integer> filterTagAndPrice = 
+				(tag, price) -> tag == BookTag.技術類 && price >= 150;
+		
+		// 4. UnaryOperation: 給予書籍特定的折扣(打九折)
+		UnaryOperator<Book> applyDiscount = book -> {
+			int newPrice = (int)(book.getPrice() * 0.9);
+			book.setPrice(newPrice);
+			return book;
+		};
+				
 		// 進行 Streram API 分析
 		bookSupplier.get().stream()  // 從 Supplier 獲取書籍列表
+			.peek(book -> setBookTag.accept(book, BookTag.技術類))
+			.filter(book -> filterTagAndPrice.test(book.getTag(), book.getPrice()))
+			.map(applyDiscount) // 使用 UnaryOperation 來折扣 
 			.forEach(out::println); // 印出書籍資訊
 
 	}
