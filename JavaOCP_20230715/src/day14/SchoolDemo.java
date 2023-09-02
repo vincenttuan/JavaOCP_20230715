@@ -1,7 +1,9 @@
 package day14;
 
 class School { // 學校:外部類別
+	
 	int studentAnount = 1000; // 全校學生總數
+	
 	class Teacher { // 老師:內部類別
 		int studentAnount = 30; // 老師負責的學生人數
 		void teach() { // 進行教學
