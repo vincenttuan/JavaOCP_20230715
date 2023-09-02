@@ -35,8 +35,8 @@ public class IntegrateDemo {
 		
 		// 利用 Stream API 進行分析
 		bookSupplier.get().stream()          // 從 Supplier 獲取書籍列表
-					.filter(expensiveBooks)  // 使用 Predicate 進行過濾
-					.map(bookToString)       // 使用 Function 進行轉換
+					.filter(expensiveBooks)  // 使用 Predicate 進行過濾(超過 150元 的書)
+					.map(bookToString)       // 使用 Function 進行轉換(包含書名與價格的字串)
 					.forEach(printBookInto); // 使用 Consumer 進行操作
 	}				
 
