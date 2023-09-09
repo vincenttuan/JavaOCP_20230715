@@ -3,8 +3,6 @@ package day15;
 import java.util.Random;
 import java.util.Scanner;
 
-import day15.Change2.Coin;
-
 public class Change3 {
 	
 	// 定義一個 Money 這個 enum 來代表各種紙鈔與硬幣的面值
