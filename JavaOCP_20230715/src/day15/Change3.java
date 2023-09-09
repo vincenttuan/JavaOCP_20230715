@@ -30,6 +30,7 @@ public class Change3 {
 		Tx(int price, int amount) {
 			this.price = price;
 			this.amount = amount;
+			System.out.println();
 		}
 		
 		public int getChange() {
@@ -61,8 +62,11 @@ public class Change3 {
 		
 		// 計算找零金額
 		Tx tx = new Tx(price, amount); // 注入商品價格與付款金額
+		//Tx tx2 = new Tx(52, 100); // 注入商品價格與付款金額
 		tx.printChangeDetail();
-		
+		//tx2.printChangeDetail();
+		System.out.println(tx);
+		//System.out.println(tx2);
 
 	}
 
