@@ -1,5 +1,7 @@
 package pattern.observer;
 
+import java.util.Random;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -23,7 +25,7 @@ public class Main {
 		subject.remove(observer2);
 		
 		// 發送新聞 2
-		subject.notifyMessage("飲料大特價~");
+		subject.notifyMessage("台積電股價: " + (new Random().nextInt(100) + 550));
 		
 	}
 
