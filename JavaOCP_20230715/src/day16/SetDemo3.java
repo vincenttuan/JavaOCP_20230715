@@ -35,13 +35,13 @@ public class SetDemo3 {
 			System.out.println(age);
 		});
 		
-		List<Integer> ages = birthdays.stream()
+		List<Integer> ages = birthdays.stream()  // String stream
 									  .mapToInt(birthStr -> {
 										  LocalDate birthday = LocalDate.parse(birthStr, formatter);
 										  int age = today.getYear() - birthday.getYear();
 										  return age;
-									  })
-									  .boxed() // int -> Integer
+									  })  // int stream
+									  .boxed() // int stream -> Integer stream 
 									  .collect(Collectors.toList());
 		System.out.println(ages);
 		
