@@ -16,8 +16,14 @@ public class Main {
 		subject.add(observer2);
 		subject.add(observer3);
 		
-		// 發送新聞
+		// 發送新聞 1
 		subject.notifyMessage("今天天氣很好~");
+		
+		// 取消訂閱
+		subject.remove(observer2);
+		
+		// 發送新聞 2
+		subject.notifyMessage("飲料大特價~");
 		
 	}
 
