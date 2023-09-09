@@ -24,7 +24,10 @@ public class NewsSubject implements Subject {
 	@Override
 	public void notifyMessage(String message) {
 		for(Observer user : users) {
-			user.update(message);
+			// 判斷 filter
+			if(user.getFilter() == null || user.getFilter().isWatch(message)) {
+				user.update(message);
+			}
 		}
 	}
 	
