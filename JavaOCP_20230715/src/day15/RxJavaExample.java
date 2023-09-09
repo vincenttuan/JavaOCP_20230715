@@ -1,5 +1,7 @@
 package day15;
 
+import java.util.Random;
+
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
@@ -11,6 +13,7 @@ public class RxJavaExample {
 
         // 使用操作符进行转换和过滤
         observable
+        	//.map(number -> number / new Random().nextInt(2)) // 0, 1 (故意可能產生除以0的錯誤)
             .map(number -> number * 2)  // 将每个数字乘以2
             .filter(result -> result % 4 == 0)  // 仅保留能被4整除的数字
             .observeOn(Schedulers.io())  // 指定观察者运行在IO线程
