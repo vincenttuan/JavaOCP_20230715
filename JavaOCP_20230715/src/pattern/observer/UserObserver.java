@@ -1,9 +1,12 @@
 package pattern.observer;
 
+import pattern.observer.filter.Filter;
+
 // 訂閱者(就是觀察者 Observer)
 public class UserObserver implements Observer {
 	private String name;
 	private int priority; // 優先權(1~10)
+	private Filter filter;
 	
 	public UserObserver(String name) {
 		this.name = name;
@@ -15,6 +18,12 @@ public class UserObserver implements Observer {
 		this.priority = priority;
 	}
 	
+	public UserObserver(String name, int priority, Filter filter) {
+		this.name = name;
+		this.priority = priority;
+		this.filter = filter;
+	}
+	
 	@Override
 	public void update(String message) {
 		System.out.printf("%s 收到訊息: %s\n", name, message);
@@ -23,6 +32,11 @@ public class UserObserver implements Observer {
 	@Override
 	public int getPriority() {
 		return priority;
+	}
+
+	@Override
+	public Filter getFilter() {
+		return filter;
 	}
 	
 }
