@@ -30,6 +30,7 @@ public class Main3 {
 		
 		// 發送新聞 1
 		subject.notifyMessage("今天天氣很好~");
+		System.out.println();
 		subject.notifyMessage("台積電股價:650");
 		
 		
