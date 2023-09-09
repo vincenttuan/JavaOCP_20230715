@@ -8,7 +8,7 @@ public class Change1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("商品金額:");
-		int price = new Random().nextInt() + 1; // 1~100
+		int price = new Random().nextInt(100) + 1; // 1~100
 		System.out.println(price);
 		
 		System.out.print("請輸入付款金額:");
