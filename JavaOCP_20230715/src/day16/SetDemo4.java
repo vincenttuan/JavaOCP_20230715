@@ -36,5 +36,16 @@ public class SetDemo4 {
 		} else {
 			System.out.println("無資料");
 		}
+		
+		// 請問那一本書的書名比較短
+		Optional<Book> shortBookOpt = books.stream()
+				.min((b1, b2) -> Integer.compare(b1.getName().length(), b2.getName().length()));
+		if(shortBookOpt.isPresent()) { // 是否有找到
+			Book book = shortBookOpt.get(); // 取出 book
+			System.out.println(book);
+		} else {
+			System.out.println("無資料");
+		}
+		
 	}
 }
