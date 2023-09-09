@@ -1,6 +1,8 @@
 package pattern.observer;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 // 新聞訂閱
@@ -10,6 +12,8 @@ public class NewsSubject implements Subject {
 	@Override
 	public void add(Observer observer) {
 		users.add(observer);
+		// 根據 observer 的優先權來排序
+		Collections.sort(users, Comparator.comparingInt(Observer::getPriority));
 	}
 
 	@Override
