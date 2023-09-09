@@ -1,7 +1,11 @@
 package day16;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class SetDemo3 {
 	public static void main(String[] args) {
@@ -20,5 +24,26 @@ public class SetDemo3 {
 		System.out.println(birthdays);
 		
 		// 請根據員工生日列表印出每一個人的年齡:
+		// LocalDate Java 8 API, 具不可變的, 且是 thread-safe
+		LocalDate today = LocalDate.of(2023, 9, 9);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		
+		birthdays.forEach(birthStr -> {
+			// 將日期字串轉 LocalDate
+			LocalDate birthday = LocalDate.parse(birthStr, formatter);
+			int age = today.getYear() - birthday.getYear();
+			System.out.println(age);
+		});
+		
+		List<Integer> ages = birthdays.stream()
+									  .mapToInt(birthStr -> {
+										  LocalDate birthday = LocalDate.parse(birthStr, formatter);
+										  int age = today.getYear() - birthday.getYear();
+										  return age;
+									  })
+									  .boxed() // int -> Integer
+									  .collect(Collectors.toList());
+		System.out.println(ages);
+		
 	}
 }
