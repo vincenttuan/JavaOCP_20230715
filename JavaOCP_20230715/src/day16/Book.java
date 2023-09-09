@@ -6,7 +6,7 @@ import java.util.Objects;
 //覆寫 equals
 //覆寫 hashCode
 
-public class Book {
+public class Book implements Comparable<Book> {
 	private String name;
 	private int price;
 	
@@ -51,5 +51,10 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [name=" + name + ", price=" + price + "]";
+	}
+
+	@Override
+	public int compareTo(Book book) {
+		return Integer.compare(this.price, book.price);
 	}
 }
