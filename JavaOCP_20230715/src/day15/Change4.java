@@ -8,7 +8,7 @@ public class Change4 {
 	// 定義一個 Money 這個 enum 來代表各種紙鈔與硬幣的面值(value)與數量(count)
 	enum Money {
 		NOTE_500(500, 10), NOTE_100(100, 20), // 紙鈔
-		COIN_50(50, 30), COIN_10(10, 40), COIN_5(5, 50), COIN_1(1, 60); // 硬幣
+		COIN_50(50, 30), COIN_10(10, 0), COIN_5(5, 50), COIN_1(1, 60); // 硬幣
 		
 		private final int value; // 面值
 		private int count;       // 數量
@@ -53,7 +53,7 @@ public class Change4 {
 				// 判斷是否有足夠的零錢可以找
 				if(count > money.getCount()) {
 					System.out.printf("Sorry %d 元不夠了無法找\n", money.getValue());
-					return;
+					continue;
 				}
 				change = change % money.getValue();
 				money.deductCount(count); // 扣除(deduct)指定數量
