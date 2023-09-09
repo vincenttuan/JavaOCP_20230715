@@ -12,7 +12,7 @@ public class UserObserver implements Observer {
 	
 	public UserObserver(String name, int priority) {
 		this.name = name;
-		this.priority = 5;
+		this.priority = priority;
 	}
 	
 	@Override
