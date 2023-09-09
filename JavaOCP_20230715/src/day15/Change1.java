@@ -19,10 +19,11 @@ public class Change1 {
 		System.out.printf("找零金額: $%d\n", change);
 		
 		// 計算每個銅板(50, 10, 5, 1)各要找幾個 ?
+		// 可以利用 / 與 % 來計算出
 		int coin50 = 0;
 		int coin10 = 0;
-		int coin5 = 0;
-		int coin1 = 0;
+		int coin5  = 0;
+		int coin1  = 0;
 		System.out.printf("50元 %d 個\n", coin50);
 		System.out.printf("10元 %d 個\n", coin10);
 		System.out.printf(" 5元 %d 個\n", coin5);
