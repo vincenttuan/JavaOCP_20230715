@@ -2,12 +2,14 @@ package day17;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListDemo1 {
 
 	public static void main(String[] args) {
-		List<String> list = new ArrayList<>();
+		//List<String> list = new ArrayList<>();
+		List<String> list = new LinkedList<>();
 		list.add("Java");
 		list.add("Python");
 		list.add("VB");
