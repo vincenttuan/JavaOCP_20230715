@@ -21,6 +21,13 @@ public class MapDemo1 {
 			System.out.println(entry.getKey());
 			System.out.println(entry.getValue());
 		}
+		
+		System.out.println(map.get("國文"));
+		// putIfAbsent() 若該元素不存在才加入
+		System.out.println(map.putIfAbsent("國文", 90));
+		System.out.println(map);
+		System.out.println(map.putIfAbsent("自然", 70));
+		System.out.println(map);
 	}
 
 }
