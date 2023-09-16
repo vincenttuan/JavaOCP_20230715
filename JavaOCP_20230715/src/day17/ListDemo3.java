@@ -79,11 +79,30 @@ public class ListDemo3 {
 				   .sum();
 		
 		System.out.printf("[%s]整體銷售業績最高 $%,.0f\n", topName, topSum);
-				
 		
+		// -------------------------------------------------------------------------------
 		
+		String topName2 = transactions.stream()
+				.map(tx -> tx.getProduct().getName()) // 取得所有商品(會有重複資料)
+				.distinct() // 去除重複資料
+				.max((name1, name2) -> {
+					double sales1 = getSumByName(name1, transactions);
+					double sales2 = getSumByName(name2, transactions);
+					return Double.compare(sales1, sales2);
+				}) // 商品名稱兩兩相比
+				.orElse("None");
+		
+		double topSum2 = getSumByName(topName2, transactions);
+		System.out.printf("[%s]整體銷售業績最高 $%,.0f\n", topName2, topSum2);
 	}
-
+	
+	// 取得商品整體銷售業績
+	private static double getSumByName(String name, List<Transaction> transactions) {
+		return transactions.stream()
+		   .filter(tx -> tx.getProduct().getName().equals(name))
+		   .mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+		   .sum();
+	}
 }
 
 
