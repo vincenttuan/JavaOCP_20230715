@@ -56,7 +56,51 @@ public class ListDemo3 {
 		System.out.printf("紅茶整體銷售業績 $%,.0f\n", redTeaSum);
 		
 		// 請問哪一個商品整體銷售業績最高?銷售業績=?
+		String topName = transactions.stream()
+				.map(tx -> tx.getProduct().getName()) // 取得所有商品(會有重複資料)
+				.distinct() // 去除重複資料
+				.max((name1, name2) -> {
+					double sales1 = transactions.stream()
+							.filter(tx -> tx.getProduct().getName().equals(name1))
+							.mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+							.sum();
+					double sales2 = transactions.stream()
+							.filter(tx -> tx.getProduct().getName().equals(name2))
+							.mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+							.sum();
+					//return (int)(sales1 - sales2);
+					return Double.compare(sales1, sales2);
+				}) // 商品名稱兩兩相比
+				.orElse("None");
+		
+		double topSum = transactions.stream()
+				   .filter(tx -> tx.getProduct().getName().equals(topName))
+				   .mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+				   .sum();
+		
+		System.out.printf("[%s]整體銷售業績最高 $%,.0f\n", topName, topSum);
+				
+		
 		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
