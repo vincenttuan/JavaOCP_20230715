@@ -48,6 +48,13 @@ public class ListDemo3 {
 								 .sum();
 		System.out.printf("整體銷售業績 $%,.0f\n", sum);
 		
+		// 請問"紅茶"整體銷售業績
+		double redTeaSum = transactions.stream()
+									   .filter(tx -> tx.getProduct().getName().equals("紅茶"))
+									   .mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+									   .sum();
+		System.out.printf("紅茶整體銷售業績 $%,.0f\n", redTeaSum);
+		
 	}
 
 }
