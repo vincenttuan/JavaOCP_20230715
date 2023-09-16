@@ -2,6 +2,7 @@ package day18;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class MapDemo1 {
 
@@ -50,6 +51,13 @@ public class MapDemo1 {
 		// merge 將國文分數 + 10 分
 		map.merge("國文", 10, (oldValue, value) -> oldValue + value);
 		System.out.println(map);
+		
+		// 將 map 先轉 entrySet() 再轉串流化進行分析
+		int sum = map.entrySet().stream()
+					 //.mapToInt(entry -> entry.getValue())
+					 .mapToInt(Entry::getValue)
+					 .sum();
+		System.out.println(sum);
 		
 	}
 
