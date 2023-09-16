@@ -55,6 +55,8 @@ public class ListDemo3 {
 									   .sum();
 		System.out.printf("紅茶整體銷售業績 $%,.0f\n", redTeaSum);
 		
+		// 請問哪一個商品整體銷售業績最高?銷售業績=?
+		
 	}
 
 }
