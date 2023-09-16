@@ -1,7 +1,9 @@
 package day18;
 
+import java.util.IntSummaryStatistics;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class MapDemo2 {
 
@@ -42,9 +44,34 @@ public class MapDemo2 {
 		System.out.println(grades);
 		
 		// 8. 請計算小明在這些科目的總分和平均分數。
+		IntSummaryStatistics stat = grades.values().stream().mapToInt(Integer::intValue).summaryStatistics();
+		System.out.printf("總分 %d 平均 %.1f\n", stat.getSum(), stat.getAverage());
 		
 		// 9. 使用 Java Stream API，找出小明得分最高的科目名稱。
+		String topSubject = grades.entrySet().stream()
+				.max(Entry.comparingByValue())  // ("體育", 98)
+				.map(Entry::getKey) // "體育"
+				.orElse("None");
+		System.out.println(topSubject);
+				
 		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
