@@ -57,6 +57,8 @@ public class MapDemo3 {
 				.filter(values -> values.length == keys.length)
 				.map(values -> IntStream.range(0, keys.length)
 						.boxed() // int 轉 Integer 因為 Collectors.toMap 必須使用物件資料
+						// keys   = date, product, price, qty, city, branch
+						// values = 2023/1/1, 紅茶, 30, 50, 台北, 信義分店
 						.collect(Collectors.toMap(i -> keys[i], i -> values[i], (v1, v2) -> v1, LinkedHashMap::new)))
 				.collect(Collectors.toList()); // 將上面所有的 map 集合統一收集到一個 list 中
 		System.out.println(sales);		
