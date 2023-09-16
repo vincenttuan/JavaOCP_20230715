@@ -5,9 +5,21 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+//可變集合/不可變集合/不可修改集合
+/*
+            +-----+-----+--------+
+            | add | set | remove |
+ +----------+-----+-----+--------+
+ | 可以變的集合 |  V  |  V  |   V    |
+ +----------+-----+-----+--------+
+ | 不可變的集合 |  X  |  V  |   X    |
+ +----------+-----+-----+--------+
+ | 不可修改集合 |  X  |  X  |   X    |
+ +----------+-----+-----+--------+
+  
+ */
 public class ListDemo2 {
 	public static void main(String[] args) {
-		// 可變集合/不可變集合
 		// 可變集合
 		List<Integer> list = new ArrayList<>();
 		System.out.println(list);
