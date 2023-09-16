@@ -39,7 +39,14 @@ public class ListDemo3 {
 		}
 		
 		System.out.println(transactions.size());
-		System.out.println(transactions);
+		//System.out.println(transactions);
+		
+		// 分析
+		// 整體銷售業績
+		double sum = transactions.stream()
+								 .mapToDouble(tx -> tx.getQty() * tx.getProduct().getPrice())
+								 .sum();
+		System.out.printf("整體銷售業績 $%,.0f\n", sum);
 		
 	}
 
