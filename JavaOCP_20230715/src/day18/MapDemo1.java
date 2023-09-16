@@ -26,8 +26,23 @@ public class MapDemo1 {
 		// putIfAbsent() 若該元素不存在才加入
 		System.out.println(map.putIfAbsent("國文", 90));
 		System.out.println(map);
-		System.out.println(map.putIfAbsent("自然", 70));
+		System.out.println(map.putIfAbsent("自然", 45));
 		System.out.println(map);
+		
+		// 若指定元素的值不及格就變為及格
+		map.compute("自然", (key, value) -> value < 60 ? 60 : value);
+		System.out.println(map);
+		
+		// 若"社會"存在才要修改元素內容
+		map.computeIfPresent("社會", (key, value) -> value < 60 ? 60 : value);
+		System.out.println(map);
+		
+		// 若"社會"不存在就新增元素並給定60分
+		map.computeIfAbsent("社會", (value) -> 60);
+		System.out.println(map);
+		
+		
+		
 	}
 
 }
