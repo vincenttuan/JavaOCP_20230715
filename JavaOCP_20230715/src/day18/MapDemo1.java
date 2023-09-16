@@ -47,6 +47,9 @@ public class MapDemo1 {
 		map.computeIfAbsent("社會", (value) -> 60);
 		System.out.println(map);
 		
+		// merge 將國文分數 + 10 分
+		map.merge("國文", 10, (oldValue, value) -> oldValue + value);
+		System.out.println(map);
 		
 	}
 
