@@ -22,7 +22,13 @@ public class MapDemo1 {
 			System.out.println(entry.getValue());
 		}
 		
-		System.out.println(map.get("國文"));
+		System.out.println("-------------------------------");
+		System.out.println(map.get("國文")); // 100
+		System.out.println(map.get("美術")); // null
+		System.out.println(map.getOrDefault("美術", 0)); // 若無此元素會得到 0
+		System.out.println(map);
+		
+		System.out.println("-------------------------------");
 		// putIfAbsent() 若該元素不存在才加入
 		System.out.println(map.putIfAbsent("國文", 90));
 		System.out.println(map);
@@ -40,7 +46,6 @@ public class MapDemo1 {
 		// 若"社會"不存在就新增元素並給定60分
 		map.computeIfAbsent("社會", (value) -> 60);
 		System.out.println(map);
-		
 		
 		
 	}
