@@ -1,25 +1,52 @@
 package day20;
 
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import day20.po.Branch;
+import day20.po.Product;
+import day20.po.Sales;
 
 public class ImportSales {
 	
 	public static void main(String[] args) throws Exception  {
-		Set<Map<String, String>> sales = getSalesSet();
+		Set<Map<String, String>> salesSet = getSalesSet();
+		List<Product> products = SQLUtil.queryProducts();
+		List<Branch> branches = SQLUtil.queryBranches();
+		
+		List<Sales> salesList = new ArrayList<>();
+		salesSet.forEach(map -> {
+			Predicate<Product> predicateProduct = p -> p.getProductName().equals(map.get("product_name")) && 
+													   p.getPrice().equals(new BigDecimal(map.get("price")));
+			Predicate<Branch> predicateBranch = b -> b.getCity().equals(map.get("city")) && 
+					   								 b.getBranchName().equals(map.get("branch_name"));
+
+			Sales sales = new Sales();
+			sales.setDate(map.get("date"));
+			sales.setProductId(products.stream().filter(predicateProduct).findFirst().get().getProductId());
+			sales.setQty(Integer.parseInt(map.get("qty")));
+			sales.setBranchId(branches.stream().filter(predicateBranch).findFirst().get().getBranchId());
+			
+			salesList.add(sales);
+		});
+		
+		System.out.println(salesList);
 		
 		// 將 sales 的資料匯入到 mysql sales 資料表中
-		String sql = "insert into sales(date, product_id, qty, branch_id) values(?, ?, ?, ?, ?)";
+		//String sql = "insert into sales(date, product_id, qty, branch_id) values(?, ?, ?, ?, ?)";
 		/*
 		try(Connection conn = SQLUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {

@@ -3,9 +3,9 @@ package day20.po;
 public class Sales {
 	private Integer id;
 	private String date;
-	private Integer product_id;
+	private Integer productId;
 	private Integer qty;
-	private Integer branch_id;
+	private Integer branchId;
 	
 	public Integer getId() {
 		return id;
@@ -19,11 +19,11 @@ public class Sales {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public Integer getProduct_id() {
-		return product_id;
+	public Integer getProductId() {
+		return productId;
 	}
-	public void setProduct_id(Integer product_id) {
-		this.product_id = product_id;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 	public Integer getQty() {
 		return qty;
@@ -31,12 +31,14 @@ public class Sales {
 	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
-	public Integer getBranch_id() {
-		return branch_id;
+	public Integer getBranchId() {
+		return branchId;
 	}
-	public void setBranch_id(Integer branch_id) {
-		this.branch_id = branch_id;
+	public void setBranchId(Integer branchId) {
+		this.branchId = branchId;
 	}
+	
+	
 	
 	
 }
