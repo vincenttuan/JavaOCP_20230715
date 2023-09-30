@@ -123,6 +123,15 @@ branch_id(PK) city branch_name
     3         高雄  左營分店
     4         台中  西區分店
 
+SQL(MySQL)-建立資料表
+----------------------------------------------
+create table branch if not exists(
+	branch_id int auto_increment primary key,
+	city varchar(50) not null,
+	branch_name varchar(50) not null			
+)
+
+
 產品(Product)
 product_id(PK) product_name price
 -----------------------------------
