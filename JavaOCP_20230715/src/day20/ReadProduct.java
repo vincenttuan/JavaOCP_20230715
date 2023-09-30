@@ -27,10 +27,6 @@ public class ReadProduct {
 			ResultSet rs = stmt.executeQuery(sql);) {
 			// 4. 將資料表欄位名稱取出
 			ResultSetMetaData md = rs.getMetaData();
-			//System.out.println(md.getColumnCount());
-			//System.out.println(md.getColumnName(1));
-			//System.out.println(md.getColumnName(2));
-			//System.out.println(md.getColumnName(3));
 			for(int i=1;i<=md.getColumnCount();i++) {
 				System.out.printf("%s\t", md.getColumnName(i));
 			}
