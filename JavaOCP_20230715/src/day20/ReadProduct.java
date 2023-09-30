@@ -20,7 +20,7 @@ public class ReadProduct {
 		String password = "12345678";
 		
 		// 3. 建立 Connection(連線物件), Statement(SQL語法敘述物件), Result(資料結果集合)
-		String sql = "select product_id, product_name, price from product";
+		String sql = "select product_id, product_name, price from product order by product_id";
 		
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			Statement stmt = conn.createStatement();

@@ -19,7 +19,7 @@ public class ReadBranch {
 		String password = "12345678";
 		
 		// 3. 建立 Connection(連線物件), Statement(SQL語法敘述物件), Result(資料結果集合)
-		String sql = "select branch_id, city, branch_name from branch";
+		String sql = "select branch_id, city, branch_name from branch order by branch_id";
 		
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			Statement stmt = conn.createStatement();
