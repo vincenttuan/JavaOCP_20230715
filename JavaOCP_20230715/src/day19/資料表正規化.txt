@@ -129,7 +129,7 @@ create table branch if not exists(
 	branch_id int auto_increment primary key,
 	city varchar(50) not null,
 	branch_name varchar(50) not null			
-)
+);
 
 
 產品(Product)
@@ -140,15 +140,35 @@ product_id(PK) product_name price
       3            冰沙      60
       4            綠茶      28
 
-銷售(Sales)
-id(PK) date      product_id(FK) qty branch_id(FK)
----------------------------------------------
-  1    2023/1/1        1        50      1
-  2    2023/1/1        2        80      2
-  3    2023/1/1        3        40      3
-  4    2023/1/1        4        30      4
-  5    2023/1/2        1        70      4
+SQL(MySQL)-建立資料表
+----------------------------------------------
+create table product if not exists(
+	product_id int auto_increment primary key,
+	product_name varchar(50) not null,
+	price decimal(10, 2) not null			
+);
 
+
+銷售(Sales)
+id(PK)   date      product_id(FK) qty branch_id(FK)
+-----------------------------------------------------
+  1    2023/1/1          1        50      1
+  2    2023/1/1          2        80      2
+  3    2023/1/1          3        40      3
+  4    2023/1/1          4        30      4
+  5    2023/1/2          1        70      4
+
+SQL(MySQL)-建立資料表
+----------------------------------------------
+create table sales if not exists(
+	id int auto_increment primary key,
+	date DATE not null,
+	product_id int,
+	qty int not null,
+	branch_id int,
+	foreign key (product_id) references product(product_id),
+	foreign key (branch_id) references branch(branch_id)	
+);
 
 
 
