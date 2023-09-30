@@ -30,7 +30,7 @@ public class ImportSales {
 		List<Sales> salesList = new ArrayList<>();
 		salesSet.forEach(map -> {
 			Predicate<Product> predicateProduct = p -> p.getProductName().equals(map.get("product_name")) && 
-													   p.getPrice().equals(new BigDecimal(map.get("price")));
+													   p.getPrice().intValue() == new BigDecimal(map.get("price")).intValue();
 			Predicate<Branch> predicateBranch = b -> b.getCity().equals(map.get("city")) && 
 					   								 b.getBranchName().equals(map.get("branch_name"));
 
@@ -43,7 +43,7 @@ public class ImportSales {
 			salesList.add(sales);
 		});
 		
-		System.out.println(salesList);
+		salesList.forEach(System.out::println);
 		
 		// 將 sales 的資料匯入到 mysql sales 資料表中
 		//String sql = "insert into sales(date, product_id, qty, branch_id) values(?, ?, ?, ?, ?)";

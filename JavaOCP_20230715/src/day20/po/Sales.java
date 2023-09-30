@@ -38,6 +38,12 @@ public class Sales {
 		this.branchId = branchId;
 	}
 	
+	@Override
+	public String toString() {
+		return "Sales [id=" + id + ", date=" + date + ", productId=" + productId + ", qty=" + qty + ", branchId="
+				+ branchId + "]";
+	}
+	
 	
 	
 	
