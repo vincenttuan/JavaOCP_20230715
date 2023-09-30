@@ -1,0 +1,30 @@
+資料庫伺服器(MySQL)
+	|_ 資料庫(Schema) A
+		|_資料表(Table) A1
+		|_資料表(Table) A2
+	|_ 資料庫(Schema) B
+		|_資料表(Table) B1
+	|_ 資料庫(Schema) C
+		|_資料表(Table) C1
+		|_資料表(Table) C2
+		|_資料表(Table) C3
+			|_資料列(Record) 1 
+				|_資料欄(Field) 學號
+				|_資料欄(Field) 姓名
+				|_資料欄(Field) 課程
+				|_資料欄(Field) 教授
+				|_資料欄(Field) 教室
+			|_資料列(Record) 2
+				|_資料欄(Field) 學號
+				|_資料欄(Field) 姓名
+				|_資料欄(Field) 課程
+				|_資料欄(Field) 教授
+				|_資料欄(Field) 教室
+			|_資料列(Record) 3
+				|_資料欄(Field) 學號
+				|_資料欄(Field) 姓名
+				|_資料欄(Field) 課程
+				|_資料欄(Field) 教授
+				|_資料欄(Field) 教室
+				
+	
