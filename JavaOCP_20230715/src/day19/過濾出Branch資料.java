@@ -39,6 +39,7 @@ public class 過濾出Branch資料 {
 				.collect(Collectors.toCollection(LinkedHashSet::new));
 		System.out.println(branches);
 		
+		
 	}
 
 }
