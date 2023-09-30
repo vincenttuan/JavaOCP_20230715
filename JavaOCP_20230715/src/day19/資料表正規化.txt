@@ -125,7 +125,7 @@ branch_id(PK) city branch_name
 
 SQL(MySQL)-建立資料表
 ----------------------------------------------
-create table branch if not exists(
+create table if not exists branch(
 	branch_id int auto_increment primary key,
 	city varchar(50) not null,
 	branch_name varchar(50) not null			
@@ -142,7 +142,7 @@ product_id(PK) product_name price
 
 SQL(MySQL)-建立資料表
 ----------------------------------------------
-create table product if not exists(
+create table if not exists product(
 	product_id int auto_increment primary key,
 	product_name varchar(50) not null,
 	price decimal(10, 2) not null			
@@ -160,7 +160,7 @@ id(PK)   date      product_id(FK) qty branch_id(FK)
 
 SQL(MySQL)-建立資料表
 ----------------------------------------------
-create table sales if not exists(
+create table if not exists sales(
 	id int auto_increment primary key,
 	date DATE not null,
 	product_id int,
