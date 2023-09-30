@@ -122,7 +122,6 @@ branch_id(PK) city branch_name
     2         台北  大安分店
     3         高雄  左營分店
     4         台中  西區分店
-    5         台中  西區分店
 
 產品(Product)
 product_id(PK) product_name price
@@ -131,6 +130,17 @@ product_id(PK) product_name price
       2            咖啡      45
       3            冰沙      60
       4            綠茶      28
+
+銷售(Sales)
+id(PK) date      product_id(FK) qty branch_id(FK)
+---------------------------------------------
+  1    2023/1/1        1        50      1
+  2    2023/1/1        2        80      2
+  3    2023/1/1        3        40      3
+  4    2023/1/1        4        30      4
+  5    2023/1/2        1        70      4
+
+
 
 
 
