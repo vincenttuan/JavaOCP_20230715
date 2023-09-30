@@ -3,6 +3,7 @@ package day20;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -23,8 +24,17 @@ public class ReadBranch {
 		try(Connection conn = DriverManager.getConnection(dbUrl, username, password);
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);) {
-			
-			// 4. 將 rs 資料透過輪詢取出
+			// 4. 將資料表欄位名稱取出
+			ResultSetMetaData md = rs.getMetaData();
+			//System.out.println(md.getColumnCount());
+			//System.out.println(md.getColumnName(1));
+			//System.out.println(md.getColumnName(2));
+			//System.out.println(md.getColumnName(3));
+			for(int i=1;i<=md.getColumnCount();i++) {
+				System.out.printf("%s\t", md.getColumnName(i));
+			}
+			System.out.println("\n------------------------------------");
+			// 5. 將 rs 資料內容透過輪詢取出
 			while (rs.next()) {
 				int branchId = rs.getInt("branch_id");
 				String city = rs.getString("city");
