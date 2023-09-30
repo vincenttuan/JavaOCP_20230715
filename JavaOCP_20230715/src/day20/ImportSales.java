@@ -46,15 +46,17 @@ public class ImportSales {
 		salesList.forEach(System.out::println);
 		
 		// 將 sales 的資料匯入到 mysql sales 資料表中
-		//String sql = "insert into sales(date, product_id, qty, branch_id) values(?, ?, ?, ?, ?)";
-		/*
+		String sql = "insert into sales(date, product_id, qty, branch_id) values(?, ?, ?, ?)";
+		
 		try(Connection conn = SQLUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);) {
 			// 批次新增
 			pstmt.clearBatch(); // 清除批次暫存
-			for(Map<String, String> map : branches) {
-				pstmt.setString(1, map.get("city"));
-				pstmt.setString(2, map.get("branch_name"));
+			for(Sales sales : salesList) {
+				pstmt.setString(1, sales.getDate());
+				pstmt.setInt(2, sales.getProductId());
+				pstmt.setInt(3, sales.getQty());
+				pstmt.setInt(4, sales.getBranchId());
 				pstmt.addBatch(); // 加入到批次
 			}
 			// 執行批次
@@ -65,7 +67,7 @@ public class ImportSales {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		*/
+		
 	}
 	
 	public static Set<Map<String, String>> getSalesSet() throws Exception {
