@@ -66,5 +66,10 @@ class SumThread extends Thread {
 }
 
 public class CyclicBarrierDemo2 {
-
+	public static void main(String[] args) {
+		// 報表印出
+		Runnable printReport = () -> System.out.println(DataCenter.report);
+		
+		// 請用 CyclicBarrier 來實現 !
+	}
 }
