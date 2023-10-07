@@ -47,7 +47,9 @@ public class TrainTicketSystem {
 		new Thread(() -> ticketSystem.bookTicket(2), "客戶D").start();
 		*/
 		
-		ExecutorService exector = Executors.newCachedThreadPool();
+		// newFixedThreadPool(n): 固定產生 n 個執行緒數量
+		// newCachedThreadPool: 動態產生需要的執行緒數量
+		ExecutorService exector = Executors.newCachedThreadPool(); 
 		exector.execute(() -> ticketSystem.bookTicket(3));
 		exector.execute(() -> ticketSystem.bookTicket(5));
 		exector.execute(() -> ticketSystem.bookTicket(4));
