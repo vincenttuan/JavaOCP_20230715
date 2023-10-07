@@ -31,12 +31,17 @@ public class CallableDemo2 {
 		ExecutorService executor = Executors.newFixedThreadPool(2);
 		
 		// 提交並執行 PrintWork
-		executor.execute(new PrintWork());
+		//executor.execute(new PrintWork());
+		Future fut = executor.submit(new PrintWork());
+		System.out.println(fut.get()); // 得到 null, 因為無回傳值
 		
 		// 提交並執行 GetNumber
 		Future<Integer> future = executor.submit(new GetNumber());
 		Integer num = future.get();
 		System.out.println(num);
+		
+		// 關閉 service
+		executor.shutdown();
 		
 	}
 }
