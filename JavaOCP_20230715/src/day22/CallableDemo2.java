@@ -3,6 +3,9 @@ package day22;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 // Runnable
@@ -23,10 +26,17 @@ class GetNumber implements Callable<Integer> {
 }
 
 public class CallableDemo2 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// 使用 ExecutorService 來簡化執行緒使用程序
+		ExecutorService executor = Executors.newFixedThreadPool(2);
 		
+		// 提交並執行 PrintWork
+		executor.execute(new PrintWork());
 		
+		// 提交並執行 GetNumber
+		Future<Integer> future = executor.submit(new GetNumber());
+		Integer num = future.get();
+		System.out.println(num);
 		
 	}
 }
