@@ -7,6 +7,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 
 /**
  
@@ -52,7 +53,17 @@ public class RandomNumberApp {
 		// 建立執行緒 + 亂數產生器
 		Thread t1 = new Thread(new RandomNumberGenerator());
 		t1.start();
-
+		
+		// UI Thread 來更新 label
+		SwingUtilities.invokeLater(() -> {
+			while (true) {
+				if(!queue.isEmpty()) {
+					String numberString = queue.peek();
+					label.setText(numberString);
+				}
+			}
+		});
+		
 	}
 
 }
