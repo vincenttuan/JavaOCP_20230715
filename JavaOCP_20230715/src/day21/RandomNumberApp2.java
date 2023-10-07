@@ -86,7 +86,8 @@ public class RandomNumberApp2 {
 			}
 		});
 		
-		
+		// 關閉服務
+		executor.shutdown();
 	}
 
 }
