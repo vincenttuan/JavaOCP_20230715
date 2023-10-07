@@ -7,6 +7,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 // 利用 CyclicBarrier 來計算大數據的資料並匯入統一報表
 // 有一個大數據 100, 30, 80 ...
@@ -104,5 +105,12 @@ public class CyclicBarrierDemo2 {
 		
 		executor.shutdown();
 		
+		// 避免主執行緒過早將 ExecutorService 停止
+		// 讓主執行緒可以處於一種等待狀態, 等待執行緒池中的所有執行緒都執行完畢才繼續運行
+		try {
+			executor.awaitTermination(1, TimeUnit.MINUTES);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 }
