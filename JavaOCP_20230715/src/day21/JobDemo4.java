@@ -13,7 +13,7 @@ public class JobDemo4 {
 		// 權限越大越容易被排程選到多次
 		t2.setPriority(Thread.MAX_PRIORITY); // t2.setPriority(10); // 1~10
 		t1.setPriority(Thread.MIN_PRIORITY); // t1.setPriority(1); // 1~10
-		
+		// 啟動
 		t1.start();
 		t2.start();
 		
