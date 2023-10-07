@@ -16,7 +16,7 @@ public class TrainTicketSystem {
 	
 	// 訂火車票
 	public void bookTicket(int quantity) {
-		lock.lock(); // 上鎖
+		lock.lock(); // 嘗試上鎖
 		try {
 			String tName = Thread.currentThread().getName();
 			if(availableTickets < quantity) {
@@ -32,7 +32,7 @@ public class TrainTicketSystem {
 			System.out.printf("%s 訂購成功 %d 張票, 剩餘票量: %d\n", 
 					tName, quantity, availableTickets);
 		} finally {
-			lock.unlock(); // 解鎖
+			lock.unlock(); // 嘗試解鎖
 		}
 	}
 	
