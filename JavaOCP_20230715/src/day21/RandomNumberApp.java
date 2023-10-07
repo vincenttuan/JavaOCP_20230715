@@ -34,7 +34,7 @@ public class RandomNumberApp {
 					// 將 randomNum 放到 queue 中
 					queue.add(String.format("%03d", randomNum));
 					System.out.println(queue);
-					Thread.sleep(250); // 停 250ms
+					Thread.sleep(random.nextInt(500)); // 停 ms
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
@@ -53,9 +53,14 @@ public class RandomNumberApp {
 		
 		// 建立執行緒 + 亂數產生器
 		Thread t1 = new Thread(new RandomNumberGenerator());
+		Thread t2 = new Thread(new RandomNumberGenerator());
+		Thread t3 = new Thread(new RandomNumberGenerator());
 		t1.start();
+		t2.start();
+		t3.start();
 		
 		// CheckQueueThread
+		// 不斷的檢查 Queue 是否有資料
 		Thread checkQueueThread = new Thread() {
 			@Override
 			public void run() {
