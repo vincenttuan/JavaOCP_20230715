@@ -25,7 +25,7 @@ public class BackAccount {
 	public synchronized void deposit(int amount) {
 		String tName = Thread.currentThread().getName();
 		// 模擬交易所花費的時間
-		for(int i=0;i<Integer.MAX_VALUE/2;i++);
+		for(int i=0;i<Integer.MAX_VALUE;i++);
 		// 加上餘額
 		this.balance += amount;
 		System.out.printf("%s 存款 %d 成功, 餘額 %d\n", tName, amount, this.balance);
