@@ -29,8 +29,9 @@ class AvgThread extends Thread {
 	}
 	public void run() {
 		double avg = Arrays.stream(DataCenter.data).average().getAsDouble();
-		DataCenter.report.put("平均業績", (int)avg);
 		try {
+			Thread.sleep(800);
+			DataCenter.report.put("平均業績", (int)avg);
 			cb.await();
 		} catch (InterruptedException | BrokenBarrierException e) {
 			e.printStackTrace();
@@ -46,8 +47,9 @@ class HightThread extends Thread {
 	}
 	public void run() {
 		int max = Arrays.stream(DataCenter.data).max().getAsInt();
-		DataCenter.report.put("最高業績", max);
 		try {
+			Thread.sleep(400);
+			DataCenter.report.put("最高業績", max);
 			cb.await();
 		} catch (InterruptedException | BrokenBarrierException e) {
 			e.printStackTrace();
@@ -63,8 +65,9 @@ class LowThread extends Thread {
 	}
 	public void run() {
 		int min = Arrays.stream(DataCenter.data).min().getAsInt();
-		DataCenter.report.put("最低業績", min);
 		try {
+			Thread.sleep(200);
+			DataCenter.report.put("最低業績", min);
 			cb.await();
 		} catch (InterruptedException | BrokenBarrierException e) {
 			e.printStackTrace();
@@ -80,8 +83,9 @@ class SumThread extends Thread {
 	}
 	public void run() {
 		int sum = Arrays.stream(DataCenter.data).sum();
-		DataCenter.report.put("業績總和", sum);
 		try {
+			Thread.sleep(100);
+			DataCenter.report.put("業績總和", sum);
 			cb.await();
 		} catch (InterruptedException | BrokenBarrierException e) {
 			e.printStackTrace();
