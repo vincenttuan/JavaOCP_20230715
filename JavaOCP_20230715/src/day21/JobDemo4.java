@@ -9,7 +9,10 @@ public class JobDemo4 {
 		// 建立二條執行緒分別存放 jobA 與 jobB
 		Thread t1 = new Thread(jobA, "T1-A");
 		Thread t2 = new Thread(jobB, "T2-B");
-		
+		// 設定權限 1(小)~10(大)
+		// 權限越大越容易被排程選到多次
+		t2.setPriority(10); // 1~10
+		t1.setPriority(1); // 1~10
 		t1.start();
 		t2.start();
 		
