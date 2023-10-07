@@ -1,7 +1,10 @@
 package day21;
 
-public class Job {
-	
+public class Job extends Thread {
+	@Override
+	public void run() {
+		work();
+	}
 	// 迴圈跑 1000 次
 	public void work() {
 		// 得到執行緒名稱
@@ -10,5 +13,4 @@ public class Job {
 			System.out.printf("%s -> %d\n", tName, i);
 		}
 	}
-	
 }
