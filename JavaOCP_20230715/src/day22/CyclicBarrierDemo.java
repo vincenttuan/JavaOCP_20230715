@@ -8,11 +8,11 @@ class Car extends Thread {
 	private String threadName;
 	Car(CyclicBarrier cyclicBarrier) {
 		this.cyclicBarrier = cyclicBarrier;
-		this.threadName = Thread.currentThread().getName();
 	}
 
 	@Override
 	public void run() {
+		this.threadName = Thread.currentThread().getName();
 		System.out.printf("%s 台北出發\n", threadName);
 		try {
 			// 模擬執行時間
@@ -33,8 +33,12 @@ class Car extends Thread {
 public class CyclicBarrierDemo {
 
 	public static void main(String[] args) {
+		Runnable eating = () -> System.out.println("吃午飯");
 		
-
+		CyclicBarrier cyclicBarrier = new CyclicBarrier(3, eating);
+		new Car(cyclicBarrier).start();
+		new Car(cyclicBarrier).start();
+		new Car(cyclicBarrier).start();
 	}
 
 }
