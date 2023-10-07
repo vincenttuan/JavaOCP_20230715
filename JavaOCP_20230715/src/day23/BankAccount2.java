@@ -39,7 +39,7 @@ public class BankAccount2 {
 		try {
 			String tName = Thread.currentThread().getName();
 			// 模擬交易所花費的時間
-			for(int i=0;i<Integer.MAX_VALUE;i++);
+			for(int i=0;i<Integer.MAX_VALUE/2;i++);
 			// 加上餘額
 			this.balance += amount;
 			System.out.printf("%s 存款 %d 成功, 餘額 %d\n", tName, amount, this.balance);
@@ -53,14 +53,12 @@ public class BankAccount2 {
 	public static void main(String[] args) {
 		BankAccount2 account = new BankAccount2(1000);
 		
-		// 建立數個執行緒用於提款
+		// 建立數個執行緒用於提款/存款
 		new Thread(() -> account.withdraw(700), "提1").start();
-		new Thread(() -> account.withdraw(500), "提2").start();
-		new Thread(() -> account.withdraw(400), "提3").start();
-		
-		// 建立數個執行緒用於存款
 		new Thread(() -> account.deposit(100), "存1").start();
+		new Thread(() -> account.withdraw(500), "提2").start();
 		new Thread(() -> account.deposit(200), "存2").start();
+		new Thread(() -> account.withdraw(400), "提3").start();
 		new Thread(() -> account.deposit(300), "存3").start();
 		
 		
