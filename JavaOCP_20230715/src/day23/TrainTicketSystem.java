@@ -1,5 +1,7 @@
 package day23;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -38,9 +40,17 @@ public class TrainTicketSystem {
 		TrainTicketSystem ticketSystem = new TrainTicketSystem(10);
 		
 		// 客戶訂票
+		/*
 		new Thread(() -> ticketSystem.bookTicket(3), "客戶A").start();
 		new Thread(() -> ticketSystem.bookTicket(5), "客戶B").start();
 		new Thread(() -> ticketSystem.bookTicket(4), "客戶C").start();
 		new Thread(() -> ticketSystem.bookTicket(2), "客戶D").start();
+		*/
+		
+		ExecutorService exector = Executors.newCachedThreadPool();
+		exector.execute(() -> ticketSystem.bookTicket(3));
+		exector.execute(() -> ticketSystem.bookTicket(5));
+		exector.execute(() -> ticketSystem.bookTicket(4));
+		exector.execute(() -> ticketSystem.bookTicket(2));
 	}
 }
