@@ -2,7 +2,7 @@ package day21;
 
 import java.util.Random;
 
-// JobA 工作 
+// JobB 工作 
 // 產生 0~9 的亂數
 public class JobB implements Runnable {
 
