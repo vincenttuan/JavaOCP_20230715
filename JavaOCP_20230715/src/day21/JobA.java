@@ -14,7 +14,7 @@ public class JobA implements Runnable {
 		Random random = new Random();
 		for(int i=1;i<=100;i++) {
 			int num = random.nextInt(1000);
-			System.out.printf("%d JobA %s -> %03d\n", i, tName, num);
+			System.out.printf("%02d JobA %s -> %03d\n", i, tName, num);
 		}
 	}
 	
