@@ -33,6 +33,7 @@ public class RandomNumberApp {
 					int randomNum = random.nextInt(1000);
 					// 將 randomNum 放到 queue 中
 					queue.add(String.format("%03d", randomNum));
+					System.out.println(queue);
 					Thread.sleep(250); // 停 250ms
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -54,15 +55,25 @@ public class RandomNumberApp {
 		Thread t1 = new Thread(new RandomNumberGenerator());
 		t1.start();
 		
-		// UI Thread 來更新 label
-		SwingUtilities.invokeLater(() -> {
-			while (true) {
-				if(!queue.isEmpty()) {
-					String numberString = queue.peek();
-					label.setText(numberString);
+		// CheckQueueThread
+		Thread checkQueueThread = new Thread() {
+			@Override
+			public void run() {
+				while (true) {
+					if(!queue.isEmpty()) {
+						String numberString = queue.poll();
+						System.out.println("numberString = " + numberString);
+						// UI Thread 來更新 label
+						SwingUtilities.invokeLater(() -> {
+							label.setText(numberString);
+						});
+					}
 				}
 			}
-		});
+			
+		};
+		checkQueueThread.start();
+		
 		
 	}
 
