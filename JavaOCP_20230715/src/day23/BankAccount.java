@@ -1,9 +1,9 @@
 package day23;
 
-public class BackAccount {
+public class BankAccount {
 	private int balance; // 帳戶餘額
 	
-	public BackAccount(int balance) {
+	public BankAccount(int balance) {
 		this.balance = balance;
 	}
 	
@@ -34,7 +34,7 @@ public class BackAccount {
 	
 	// 主程式
 	public static void main(String[] args) {
-		BackAccount account = new BackAccount(1000);
+		BankAccount account = new BankAccount(1000);
 		
 		// 建立數個執行緒用於提款
 		new Thread(() -> account.withdraw(700), "提1").start();
