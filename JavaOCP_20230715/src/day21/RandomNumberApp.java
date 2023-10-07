@@ -73,6 +73,12 @@ public class RandomNumberApp {
 							label.setText(numberString);
 						});
 					}
+					// 提升處理效率
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 			
