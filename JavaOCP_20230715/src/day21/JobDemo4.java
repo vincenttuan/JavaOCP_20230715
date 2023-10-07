@@ -17,6 +17,8 @@ public class JobDemo4 {
 		t1.start();
 		t2.start();
 		
+		t1.run(); // 由 main 去執行 t1 的工作
+		t1.start(); // 再重新啟動 t1, 不可, 會發生 IllegalThreadStateException
 	}
 
 }
