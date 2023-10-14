@@ -47,9 +47,32 @@ public class SalaryHashAddSaltGenerator {
 		 * | Mary | 6d96349.. | d69e83058e1.. |
 		 * +------+-----------+---------------+
 		 * */
+		String username = "john";
+		String saltHexFromDB = KeyUtil.bytesToHex(salt);
+		String hashPasswordFromDB = hashedStrPassword;
 		
+		// 使用者輸入密碼 1234
+		String userPassword = "1234";
+		// 1.根據 userPassword + saltHexFromDB 得到 hashPassword
+		// 2.比較 hashPassword 與 hashPasswordFromDB 是否相等
+		MessageDigest messageDigest2 = MessageDigest.getInstance("SHA-256");
 		
+		// 鹽加入
+		byte[] saltFromDB = KeyUtil.hexStringToByteArray(saltHexFromDB);
+		messageDigest2.update(saltFromDB);
 		
+		// 在加 userPassword 得到 hashPassword
+		hashedBytesPassword = messageDigest2.digest(userPassword.getBytes());
+		hashedStrPassword = KeyUtil.bytesToHex(hashedBytesPassword);
+		
+		System.out.println();
+		System.out.printf("加鹽的 hash 密碼: %s\n", hashedStrPassword);
+		
+		if(hashPasswordFromDB.equals(hashedStrPassword)) {
+			System.out.println("密碼比對成功");
+		} else {
+			System.out.println("密碼比對失敗");
+		}
 	}
 
 }
