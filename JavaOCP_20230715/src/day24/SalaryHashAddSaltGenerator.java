@@ -36,6 +36,20 @@ public class SalaryHashAddSaltGenerator {
 		System.out.printf("原始密碼: %s\n", password);
 		System.out.printf("加鹽的 hash 密碼: %s\n", hashedStrPassword);
 		
+		// saltHexStr(鹽) 與 hashedStrPassword(加鹽的hash密碼) 要存入資料庫中
+		/* 如下:
+		 * 使用者資料表:
+		 * +------+-----------+---------------+
+		 * | user |   salt    |    hashPwd    |
+		 * +------+-----------+---------------+
+		 * | John | c43eb3c.. | ae94e3cfccd.. |
+		 * +------+-----------+---------------+
+		 * | Mary | 6d96349.. | d69e83058e1.. |
+		 * +------+-----------+---------------+
+		 * */
+		
+		
+		
 	}
 
 }
