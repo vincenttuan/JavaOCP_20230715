@@ -1,5 +1,7 @@
 package day25;
 
+import javax.crypto.SecretKey;
+
 /*
  * 
  * 用於驗證薪資明細的 MAC
@@ -13,9 +15,27 @@ package day25;
 */
 public class EmpSalaryMacVerifier {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) throws Exception {
+		// 薪資檔案位置
+		String filePath = "src/day25/john_salary.txt";
+		// 密鑰檔案位置
+		String keyPath = "src/day25/macKey.key";
+		// 得到密鑰
+		SecretKey macKey = KeyUtil.getSecretKeyFromFile("HmacSHA256", keyPath);
+		// 生成 mac
+		String macValue = KeyUtil.generateMac("HmacSHA256", macKey, filePath);
+		
+		// HR 所生成的 mac
+		String hrMac = "dbdcb69904f1ac93bc224289e9151d3b5def346c631f7d79c503a12857334fbe";
+		
+		// 拿你所生成的 macValue 與 HR 部門所生成 hrMac 進行比對
+		if(macValue.equals(hrMac)) {
+			System.out.println("薪資明細檔驗證成功. 資料沒有受到修改, 資料是從 HR 發送");
+		} else {
+			System.out.println("薪資明細檔驗證失敗 !");
+		}
+		
+		
 	}
 
 }

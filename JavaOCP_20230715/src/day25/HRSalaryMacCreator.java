@@ -21,6 +21,7 @@ public class HRSalaryMacCreator {
 	public static void main(String[] args) throws Exception {
 		// 薪資檔案位置
 		String filePath = "src/day25/john_salary.txt";
+		// 密鑰檔案位置
 		String keyPath = "src/day25/macKey.key";
 		
 		// 判斷若 keyPath 已經存在則直接取得金鑰, 反之則創建金鑰
