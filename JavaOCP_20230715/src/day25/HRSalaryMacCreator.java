@@ -28,7 +28,9 @@ public class HRSalaryMacCreator {
 		KeyUtil.saveSecretKeyToFile(macKey, keyPath);
 		System.out.println("密鑰儲存成功: " + keyPath);
 		
-		
+		// 根據 "HmacSHA256" + macKey + 薪資檔案位置 filePath 來生成 macValue
+		String macValue = KeyUtil.generateMac("HmacSHA256", macKey, filePath);
+		System.out.println("mac: " + macValue);
 
 	}
 
