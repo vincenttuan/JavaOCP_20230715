@@ -45,7 +45,10 @@ public class HttpClientDemo {
 		System.out.printf("現在溫度: %.1f °C\n", temp);
 		
 		// 5. 下載 icon 並存檔
-		String icon = "04d"; // Homework 請分析 json 取出 icon 的值 
+		//String icon = "04d"; // Homework 請分析 json 取出 icon 的值
+		String icon = jsonObject.getAsJsonArray("weather")
+								.get(0).getAsJsonObject()
+								.get("icon").getAsString();
 		urlPath = "https://openweathermap.org/img/wn/%s@4x.png";
 		urlPath = String.format(urlPath, icon);
 		
