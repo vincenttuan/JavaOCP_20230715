@@ -1,5 +1,7 @@
 package day25;
 
+import java.io.File;
+
 import javax.crypto.SecretKey;
 
 /*
@@ -19,14 +21,22 @@ public class HRSalaryMacCreator {
 	public static void main(String[] args) throws Exception {
 		// 薪資檔案位置
 		String filePath = "src/day25/john_salary.txt";
-		
-		// 生成一個密鑰(秘密鑰匙)
-		SecretKey macKey = KeyUtil.generateKeyForHmac();
-		
-		// 保存密鑰, 讓 john 可以得到相同的密鑰
 		String keyPath = "src/day25/macKey.key";
-		KeyUtil.saveSecretKeyToFile(macKey, keyPath);
-		System.out.println("密鑰儲存成功: " + keyPath);
+		
+		// 判斷若 keyPath 已經存在則直接取得金鑰, 反之則創建金鑰
+		SecretKey macKey = null;
+		if(new File(keyPath).exists()) {
+			// 密鑰存在則透過金鑰檔案位置得到金鑰
+			macKey = KeyUtil.getSecretKeyFromFile("HmacSHA256", keyPath);
+			System.out.println("密鑰取得成功!");
+		} else {
+			// 密鑰不存在則生成一個密鑰(秘密鑰匙)
+			macKey = KeyUtil.generateKeyForHmac();
+		
+			// 保存密鑰, 讓 john 可以得到相同的密鑰
+			KeyUtil.saveSecretKeyToFile(macKey, keyPath);
+			System.out.println("密鑰儲存成功: " + keyPath);
+		}
 		
 		// 根據 "HmacSHA256" + macKey + 薪資檔案位置 filePath 來生成 macValue
 		String macValue = KeyUtil.generateMac("HmacSHA256", macKey, filePath);
