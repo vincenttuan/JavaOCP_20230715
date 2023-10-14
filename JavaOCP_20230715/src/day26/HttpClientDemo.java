@@ -36,7 +36,7 @@ public class HttpClientDemo {
 		JsonObject jsonObject = JsonParser.parseString(jsonString).getAsJsonObject();
 		JsonObject mainObject = jsonObject.getAsJsonObject("main");
 		double temp = mainObject.get("temp").getAsDouble() - 273.15;
-		System.out.printf("現在溫度: %.1f°C\n", temp);
+		System.out.printf("現在溫度: %.1f °C\n", temp);
 		
 		
 	}
