@@ -1,5 +1,7 @@
 package day25;
 
+import java.util.Arrays;
+
 import javax.crypto.SecretKey;
 
 /**
@@ -29,7 +31,13 @@ public class MACExample {
 		
 		// 在實際的應用中，當接收方收到訊息和 MAC 值時，他將執行以下驗證：
 		// 1. 使用相同的密鑰和訊息生成一個新的 MAC
-		// 2. 比對接收到的 MAC 和新生成的 MAC 是否相同
+		byte[] comparedMacValue = KeyUtil.generateMac("HmacSHA256", macKey, message.getBytes());
 		
+		// 2. 比對接收到的 MAC 和新生成的 MAC 是否相同
+		if(Arrays.equals(macValue, comparedMacValue)) {
+			System.out.println("MAC 驗證成功 ! (確認訊息的完整性和認證性[來源也合法])");
+		} else {
+			System.out.println("MAC 驗證失敗 !");
+		}
 	}	
 }
