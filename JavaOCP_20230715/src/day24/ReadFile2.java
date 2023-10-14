@@ -14,6 +14,7 @@ public class ReadFile2 {
 			char[] buffer = new char[1024];
 			int charsRead = -1;
 			while((charsRead = fr.read(buffer)) != -1) {
+				System.out.println("本次讀取" + charsRead + "個字");
 				System.out.println(buffer);
 			}
 			
