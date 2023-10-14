@@ -1,0 +1,41 @@
+package day24;
+
+import java.security.MessageDigest;
+import java.security.SecureRandom;
+
+// Hash 加鹽(Salt)
+public class SalaryHashAddSaltGenerator {
+
+	public static void main(String[] args) throws Exception {
+		// 定義一個密碼
+		String password = "1234";
+		
+		// 生成鹽
+		byte[] salt = new byte[16];
+		SecureRandom secureRandom = new SecureRandom();
+		secureRandom.nextBytes(salt);
+		
+		// 將鹽透過 16 進位的字串來表示
+		String saltHexStr = KeyUtil.bytesToHex(salt);
+		System.out.printf("鹽: %s\n", saltHexStr);
+		
+		// 利用 SHA-256 加密演算法來產生訊息摘要物件
+		// 幫助我們生成密碼的 Hash
+		MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+		
+		// 加入鹽
+		messageDigest.update(salt);
+		
+		// 將密碼進行 Hash
+		byte[] hashedBytesPassword = messageDigest.digest(password.getBytes());
+		
+		// 將 byte[] -> 轉 Hex 字串
+		String hashedStrPassword = KeyUtil.bytesToHex(hashedBytesPassword);
+		
+		// 印出 password 有加鹽的 hash
+		System.out.printf("原始密碼: %s\n", password);
+		System.out.printf("加鹽的 hash 密碼: %s\n", hashedStrPassword);
+		
+	}
+
+}
