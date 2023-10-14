@@ -47,6 +47,7 @@ public class SalaryHashAddSaltGenerator {
 		 * | Mary | 6d96349.. | d69e83058e1.. |
 		 * +------+-----------+---------------+
 		 * */
+		// 假設已經從資料庫中取得以下資訊
 		String username = "john";
 		String saltHexFromDB = KeyUtil.bytesToHex(salt);
 		String hashPasswordFromDB = hashedStrPassword;
