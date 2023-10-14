@@ -21,5 +21,15 @@ public class MACExample {
          */
 		SecretKey macKey = KeyUtil.generateKeyForHmac();
 		
-	}
+		// 指定 HmacSHA256 哈希函數 + macKey 得到 MAC 值
+		byte[] macValue = KeyUtil.generateMac("HmacSHA256", macKey, message.getBytes());
+		
+		// 印出 macValue 16進位的內容
+		System.out.println("mac code: " + KeyUtil.bytesToHex(macValue));
+		
+		// 在實際的應用中，當接收方收到訊息和 MAC 值時，他將執行以下驗證：
+		// 1. 使用相同的密鑰和訊息生成一個新的 MAC
+		// 2. 比對接收到的 MAC 和新生成的 MAC 是否相同
+		
+	}	
 }
