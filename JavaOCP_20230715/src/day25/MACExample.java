@@ -1,5 +1,7 @@
 package day25;
 
+import javax.crypto.SecretKey;
+
 /**
  * Message Authentication Code (MAC) 是一種使用密鑰的哈希算法，
  * 主要用於確認訊息的完整性和認證性。
@@ -9,7 +11,15 @@ package day25;
  * 以驗證訊息的完整性和來源。
  */
 public class MACExample {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		// 定義一個薪資訊息
+		String message = "$88000";
+		
+		/**
+         * 產生一把專用於 HMAC (Hash-based Message Authentication Code) 的密鑰。
+         * HMAC 是一種特殊類型的MAC，它使用特定的哈希函數和密鑰。
+         */
+		SecretKey macKey = KeyUtil.generateKeyForHmac();
 		
 	}
 }
