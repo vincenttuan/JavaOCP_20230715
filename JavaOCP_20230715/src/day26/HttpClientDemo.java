@@ -4,6 +4,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+import javax.net.ssl.StandardConstants;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -38,7 +44,35 @@ public class HttpClientDemo {
 		double temp = mainObject.get("temp").getAsDouble() - 273.15;
 		System.out.printf("現在溫度: %.1f °C\n", temp);
 		
+		// 5. 下載 icon 並存檔
+		String icon = "04d"; // Homework 請分析 json 取出 icon 的值 
+		urlPath = "https://openweathermap.org/img/wn/%s@4x.png";
+		urlPath = String.format(urlPath, icon);
 		
+		client = HttpClient.newHttpClient();
+		request = HttpRequest.newBuilder()
+				.uri(URI.create(urlPath))
+				.build();
+		
+		HttpResponse<byte[]> response2 = client.send(request, HttpResponse.BodyHandlers.ofByteArray());
+		byte[] imageData = response2.body();
+		
+		Path imagePath = Paths.get("src/day26/icon.png");
+		Files.write(imagePath, imageData, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
